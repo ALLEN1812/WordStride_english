@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+
+  # ── MySQL ───────────────────────────────────────────────────
+  db:
+    image: mysql:8.0
+    container_name: english_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost",
+             "-uroot", "-p${DB_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  # ── Backend (Node.js / Express) ─────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: english_backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      DB_HOST: db          # override để trỏ vào service "db"
+    volumes:
+      - uploads:/app/uploads   # ảnh upload tồn tại qua các lần restart
+    expose:
+      - "5000"
+
+  # ── Frontend (React → Nginx) ────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: /api   # gọi API qua Nginx proxy, không hardcode host
+    container_name: english_frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "80:80"      # đổi sang "443:443" khi đã có SSL
+
+volumes:
+  db_data:    # dữ liệu MySQL
+  uploads:    # ảnh / audio đã upload

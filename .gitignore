@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment (chứa password, API key — KHÔNG push lên GitHub)
+.env
+.env.local
+.env.*.local
+backend/.env
+
+# Build output
+frontend/dist/
+frontend/.vite/
+
+# Docker
+docker-compose.override.yml
+
+# Uploads (lưu trên Cloudinary, không cần push)
+uploads/
+backend/uploads/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/settings.json
+.idea/

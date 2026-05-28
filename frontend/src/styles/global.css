@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+/* ── Typography system ────────────────────────────────────────────────────── */
+:root {
+  --font-display: 'Cinzel', serif;             /* Logo, hero titles, page headers        */
+  --font-title:   'Cormorant Garamond', serif;  /* Card titles, lesson names, module names */
+  --font-body:    'Be Vietnam Pro', sans-serif; /* Nav, body, buttons, badges, descriptions */
+}
+
+body {
+  font-family: var(--font-body) !important;
+}
+
+/* ── Dark mode: use our navy instead of Bootstrap's default dark gray ──────── */
+[data-bs-theme="dark"] body {
+  background-color: #060e1f !important;
+  color: #e8dcc8;
+}
+
+/* ── Bootstrap card dark overrides ─────────────────────────────────────────── */
+[data-bs-theme="dark"] .card {
+  --bs-card-bg: #0a1422;
+  --bs-card-border-color: rgba(200, 169, 110, .18);
+  --bs-card-color: #e8dcc8;
+}
+
+[data-bs-theme="dark"] .card-footer {
+  background-color: rgba(255, 255, 255, .03) !important;
+  border-top-color: rgba(200, 169, 110, .15) !important;
+}
+
+/* ── Bootstrap table dark overrides ────────────────────────────────────────── */
+[data-bs-theme="dark"] .table {
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: rgba(200, 169, 110, .05);
+  --bs-table-hover-bg: rgba(200, 169, 110, .08);
+  --bs-table-border-color: rgba(200, 169, 110, .15);
+  --bs-table-color: #e8dcc8;
+}
+
+[data-bs-theme="dark"] .table-light {
+  --bs-table-bg: rgba(200, 169, 110, .08);
+  --bs-table-color: #c8a96e;
+  --bs-table-border-color: rgba(200, 169, 110, .2);
+}
+
+/* ── Bootstrap form dark overrides ─────────────────────────────────────────── */
+[data-bs-theme="dark"] .form-select,
+[data-bs-theme="dark"] .form-control {
+  background-color: rgba(255, 255, 255, .04);
+  border-color: rgba(200, 169, 110, .2);
+  color: #e8dcc8;
+}
+
+[data-bs-theme="dark"] .form-select:focus,
+[data-bs-theme="dark"] .form-control:focus {
+  border-color: rgba(200, 169, 110, .5);
+  box-shadow: 0 0 0 0.25rem rgba(200, 169, 110, .15);
+}
+
+/* ── Bootstrap button dark overrides ───────────────────────────────────────── */
+[data-bs-theme="dark"] .btn-outline-primary {
+  --bs-btn-color: #c8a96e;
+  --bs-btn-border-color: rgba(200, 169, 110, .4);
+  --bs-btn-hover-bg: rgba(200, 169, 110, .15);
+  --bs-btn-hover-border-color: #c8a96e;
+  --bs-btn-hover-color: #e8d5a3;
+  --bs-btn-active-bg: rgba(200, 169, 110, .2);
+  --bs-btn-active-color: #e8d5a3;
+}
+
+[data-bs-theme="dark"] .btn-primary {
+  --bs-btn-bg: rgba(200, 169, 110, .22);
+  --bs-btn-border-color: rgba(200, 169, 110, .5);
+  --bs-btn-color: #e8d5a3;
+  --bs-btn-hover-bg: rgba(200, 169, 110, .35);
+  --bs-btn-hover-border-color: #c8a96e;
+  --bs-btn-hover-color: #f5ecd4;
+  --bs-btn-active-bg: rgba(200, 169, 110, .4);
+}
+
+[data-bs-theme="dark"] .btn-sm.btn-outline-primary,
+[data-bs-theme="dark"] .btn-sm.btn-primary {
+  font-size: .8rem;
+}
+
+/* ── Bootstrap badge dark overrides ────────────────────────────────────────── */
+[data-bs-theme="dark"] .badge.bg-primary {
+  background-color: rgba(79, 135, 247, .2) !important;
+  color: #7bb3f5;
+}
+
+[data-bs-theme="dark"] .badge.bg-success {
+  background-color: rgba(129, 199, 132, .2) !important;
+  color: #81c784;
+}
+
+[data-bs-theme="dark"] .badge.bg-warning {
+  background-color: rgba(255, 209, 102, .18) !important;
+  color: #ffd166;
+}
+
+[data-bs-theme="dark"] .badge.bg-danger {
+  background-color: rgba(255, 100, 100, .18) !important;
+  color: #ff8888;
+}
+
+/* ── Misc dark overrides ────────────────────────────────────────────────────── */
+[data-bs-theme="dark"] .text-muted { color: #8a7f6a !important; }
+[data-bs-theme="dark"] .text-dark  { color: #e8dcc8 !important; }
+[data-bs-theme="dark"] .shadow-sm  { box-shadow: 0 2px 12px rgba(0, 0, 0, .4) !important; }
