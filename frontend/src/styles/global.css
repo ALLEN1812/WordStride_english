@@ -2,14 +2,76 @@
 
 /* ── Typography system ────────────────────────────────────────────────────── */
 :root {
-  --font-display: 'Cinzel', serif;             /* Logo, hero titles, page headers        */
-  --font-title:   'Cormorant Garamond', serif;  /* Card titles, lesson names, module names */
-  --font-body:    'Be Vietnam Pro', sans-serif; /* Nav, body, buttons, badges, descriptions */
+  --font-display: 'Cinzel', serif;
+  --font-title:   'Cormorant Garamond', serif;
+  --font-body:    'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* ── App surface / text / border (light mode defaults) ── */
+  --app-bg:           #f0f2f5;
+  --app-surface:      #ffffff;
+  --app-surface-2:    #f8f9fa;
+  --app-surface-3:    #f0f2f5;
+  --app-text:         #1a1a2e;
+  --app-text-2:       #495057;
+  --app-text-3:       #6c757d;
+  --app-border:       #dee2e6;
+  --app-border-light: #f0f0f0;
+
+  /* ── Achievement rarity (light) ── */
+  --rar-common-bg:  #f0f0f0;  --rar-common-c:  #4b5563;  --rar-common-bd:  #d1d5db;
+  --rar-rare-bg:    #eff6ff;  --rar-rare-c:    #1d4ed8;  --rar-rare-bd:    #93c5fd;
+  --rar-epic-bg:    #f5f3ff;  --rar-epic-c:    #7c3aed;  --rar-epic-bd:    #c4b5fd;
+  --rar-legend-bg:  #fff7ed;  --rar-legend-c:  #c2410c;  --rar-legend-bd:  #fdba74;
+
+  /* ── Feedback colors (light) ── */
+  --correct-bg:  #e8f5e9;  --correct-border: #4caf50;  --correct-text: #2e7d32;
+  --wrong-bg:    #ffebee;  --wrong-border:   #f44336;  --wrong-text:   #c62828;
+  --hint-bg:     #fffbf0;  --hint-border:    #ffc107;  --hint-text:    #856404;
+}
+
+[data-bs-theme="dark"] {
+  --app-bg:           #060e1f;
+  --app-surface:      #0a1422;
+  --app-surface-2:    #0d1a2e;
+  --app-surface-3:    #080f22;
+  --app-text:         #e8dcc8;
+  --app-text-2:       #b8a98a;
+  --app-text-3:       #8a7f6a;
+  --app-border:       rgba(200,169,110,.2);
+  --app-border-light: rgba(200,169,110,.1);
+
+  --rar-common-bg:  rgba(150,150,150,.12); --rar-common-c:  #a0a8b0; --rar-common-bd:  rgba(160,160,160,.3);
+  --rar-rare-bg:    rgba(79,135,247,.12);  --rar-rare-c:    #7baef5; --rar-rare-bd:    rgba(79,135,247,.4);
+  --rar-epic-bg:    rgba(167,139,250,.12); --rar-epic-c:    #c4a7f5; --rar-epic-bd:    rgba(167,139,250,.4);
+  --rar-legend-bg:  rgba(251,146,60,.12);  --rar-legend-c:  #fba45a; --rar-legend-bd:  rgba(251,146,60,.4);
+
+  --correct-bg:  rgba(76,175,80,.12);  --correct-border: #4caf50;  --correct-text: #81c784;
+  --wrong-bg:    rgba(244,67,54,.12);  --wrong-border:   #f44336;  --wrong-text:   #ef9a9a;
+  --hint-bg:     rgba(255,193,7,.1);   --hint-border:    #ffc107;  --hint-text:    #ffd54f;
 }
 
 body {
   font-family: var(--font-body) !important;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: 1.35;
+}
+
+p { line-height: 1.7; }
+
+/* ── Scrollbar (dark mode) ── */
+[data-bs-theme="dark"] ::-webkit-scrollbar { width: 6px; height: 6px; }
+[data-bs-theme="dark"] ::-webkit-scrollbar-track { background: rgba(255,255,255,.03); }
+[data-bs-theme="dark"] ::-webkit-scrollbar-thumb { background: rgba(200,169,110,.25); border-radius: 3px; }
+[data-bs-theme="dark"] ::-webkit-scrollbar-thumb:hover { background: rgba(200,169,110,.4); }
 
 /* ── Dark mode: use our navy instead of Bootstrap's default dark gray ──────── */
 [data-bs-theme="dark"] body {

@@ -1,0 +1,421 @@
+﻿
+id	lesson_id	question	option_a	option_b	option_c	option_d	correct	explanation	order_index	created_at	section_id	
+question_type	fill_answer
+1	1	She ___ to school every day.	go	goes	going	gone	B	He/She/It: add -s ??? goes.	1	2026-05-15 13:28:09	1	
+multiple_choice	NULL
+2	1	They ___ football on weekends.	plays	playing	play	played	C	They (plural) uses the base verb: play.	2	2026-05-15 
+13:28:09	1	multiple_choice	NULL
+3	1	My brother ___ the guitar every evening.	play	plays	playing	played	B	My brother = He ??? plays.	3	2026-05-15 
+13:28:09	1	multiple_choice	NULL
+4	1	Water ___ at 100??C.	boil	boiling	boiled	boils	D	Scientific fact, it (water) ??? boils.	4	2026-05-15 13:28:09	1	
+multiple_choice	NULL
+5	1	The cat ___ on the sofa all day.	sleep	slept	sleeping	sleeps	D	The cat = it ??? sleeps.	5	2026-05-15 13:28:09	1	
+multiple_choice	NULL
+6	1	He ___ three languages fluently.	speak	speaking	spoke	speaks	D	He ??? speaks.	6	2026-05-15 13:28:09	1	
+multiple_choice	NULL
+7	1	She _____ (study) for two hours every night.	NULL	NULL	NULL	NULL	NULL	study: consonant+y ??? ies.	7	2026-05-15 
+13:28:09	1	fill_blank	studies
+8	1	She ___ like spicy food.	do not	not	does not	is not	C	She uses "does not" for negation.	1	2026-05-15 13:28:09	2	
+multiple_choice	NULL
+9	1	___ you speak English?	Are	Do	Does	Is	B	For I/You/We/They ??? Do.	2	2026-05-15 13:28:09	2	multiple_choice	NULL
+10	1	___ your sister work here?	Do	Are	Is	Does	D	Your sister = She ??? Does.	3	2026-05-15 13:28:09	2	multiple_choice	
+NULL
+11	1	They ___ eat meat ??? they are vegetarians.	doesn't	aren't	don't	isn't	C	They ??? don't.	4	2026-05-15 13:28:09	2	
+multiple_choice	NULL
+12	1	___ he read the newspaper every morning?	Do	Is	Are	Does	D	He ??? Does.	5	2026-05-15 13:28:09	2	multiple_choice	
+NULL
+13	1	Which sentence is grammatically correct?	She don't have a car.	She doesn't has a car.	She doesn't have a car.	She 
+not have a car.	C	does not + base verb (have, not has).	6	2026-05-15 13:28:09	2	multiple_choice	NULL
+14	1	_____ Tom and Lisa live in the same city? (question)	NULL	NULL	NULL	NULL	NULL	Tom and Lisa = They ??? Do.	7	
+2026-05-15 13:28:09	2	fill_blank	Do
+15	1	Tom usually ___ up at 6 a.m.	wake	woke	waking	wakes	D	Tom = He ??? wakes.	1	2026-05-15 13:28:09	3	multiple_choice	
+NULL
+16	1	___ it often ___ in London?	Does / rain	Do / rain	Is / rain	Does / rains	A	It ??? Does + base verb (rain).	2	
+2026-05-15 13:28:09	3	multiple_choice	NULL
+17	1	My parents ___ live near my house.	doesn't	aren't	don't	isn't	C	My parents = They ??? don't.	3	2026-05-15 
+13:28:09	3	multiple_choice	NULL
+18	1	The Earth ___ around the Sun.	move	moving	moved	moves	D	Scientific fact, The Earth = it ??? moves.	4	2026-05-15 
+13:28:09	3	multiple_choice	NULL
+19	1	He _____ (not/watch) TV after midnight.	NULL	NULL	NULL	NULL	NULL	He ??? does not (doesn't) + base verb.	5	
+2026-05-15 13:28:09	3	fill_blank	doesn't watch
+20	1	She always _____ (carry) an umbrella.	NULL	NULL	NULL	NULL	NULL	carry: consonant+y ??? ies.	6	2026-05-15 13:28:09	
+3	fill_blank	carries
+21	2	What is the -ing form of "make"?	makeing	macking	making	makking	C	Drop the -e: make ??? making.	1	2026-05-15 
+13:28:09	4	multiple_choice	NULL
+22	2	What is the -ing form of "run"?	runing	running	runeing	runned	B	Short vowel + consonant: double the n ??? 
+running.	2	2026-05-15 13:28:09	4	multiple_choice	NULL
+23	2	What is the -ing form of "sit"?	siting	sitting	siteing	sitten	B	Short vowel + consonant: double the t ??? 
+sitting.	3	2026-05-15 13:28:09	4	multiple_choice	NULL
+24	2	What is the -ing form of "write"?	writeing	writting	writing	writng	C	Drop the -e: write ??? writing.	4	2026-05-15 
+13:28:09	4	multiple_choice	NULL
+25	2	What is the -ing form of "swim"?	swiming	swimm	swimming	swimeing	C	Short vowel + consonant: double the m ??? 
+swimming.	5	2026-05-15 13:28:09	4	multiple_choice	NULL
+26	2	What is the -ing form of "dance"?	NULL	NULL	NULL	NULL	NULL	Drop the -e: dance ??? dancing.	6	2026-05-15 13:28:09	
+4	fill_blank	dancing
+27	2	What is the -ing form of "get"?	NULL	NULL	NULL	NULL	NULL	Short vowel + consonant: double the t ??? getting.	7	
+2026-05-15 13:28:09	4	fill_blank	getting
+28	2	She ___ a book right now.	read	reads	is reading	are reading	C	She ??? is + verb-ing.	1	2026-05-15 13:28:09	5	
+multiple_choice	NULL
+29	2	We ___ dinner at the moment.	are having	is having	have	has	A	We ??? are + verb-ing.	2	2026-05-15 13:28:09	5	
+multiple_choice	NULL
+30	2	He ___ right now ??? he is at the gym.	isn't sleeping	aren't sleeping	doesn't sleeping	not sleeping	A	He ??? is 
+not (isn't) sleeping.	3	2026-05-15 13:28:09	5	multiple_choice	NULL
+31	2	I ___ to music while I work.	am listening	is listening	are listening	am listen	A	I ??? am + verb-ing.	4	
+2026-05-15 13:28:09	5	multiple_choice	NULL
+32	2	They ___ because the film is sad.	is crying	are crying	crying	are cry	B	They ??? are + verb-ing.	5	2026-05-15 
+13:28:09	5	multiple_choice	NULL
+33	2	Which sentence is INCORRECT?	She is knowing the answer.	She is reading a book.	They are playing outside.	He is 
+running to the bus.	A	know is a stative verb ??? not used with -ing.	6	2026-05-15 13:28:09	5	multiple_choice	NULL
+34	2	___ you listening to me right now?	Do	Are	Is	Were	B	You ??? Are + verb-ing.	1	2026-05-15 13:28:09	6	
+multiple_choice	NULL
+35	2	What ___ she ___ ?	does / do	is / doing	are / doing	does / doing	B	She ??? is + verb-ing: What is she doing?	2	
+2026-05-15 13:28:09	6	multiple_choice	NULL
+36	2	I usually ___ coffee, but today I ___ tea.	drink / am drinking	am drinking / drink	drinks / am drinking	drink / 
+drinking	A	Habit ??? Simple Present; action now ??? Present Continuous.	3	2026-05-15 13:28:09	6	multiple_choice	NULL
+37	2	Look! The dog ___ in the garden.	plays	is playing	play	are playing	B	Action happening now (Look!) ??? is playing.	
+4	2026-05-15 13:28:09	6	multiple_choice	NULL
+38	2	_____ (they/study) right now? Yes, they are.	NULL	NULL	NULL	NULL	NULL	They ??? Are + verb-ing form.	5	2026-05-15 
+13:28:09	6	fill_blank	Are they studying
+39	2	She _____ (not/talk) on the phone at the moment.	NULL	NULL	NULL	NULL	NULL	She ??? is not (isn't) + verb-ing.	6	
+2026-05-15 13:28:09	6	fill_blank	isn't talking
+40	3	She ___ for the exam all week.	studyed	studied	studed	studded	B	study: consonant+y ??? ied.	1	2026-05-15 13:28:09	
+7	multiple_choice	NULL
+41	3	He ___ the car and drove away.	stoped	stopted	stopped	stopp	C	stop: short vowel+consonant ??? doubled p.	2	
+2026-05-15 13:28:09	7	multiple_choice	NULL
+42	3	We ___ in Paris for two weeks.	livedde	live	lived	living	C	live ??? + d: lived.	3	2026-05-15 13:28:09	7	
+multiple_choice	NULL
+43	3	They ___ the game easily. (win)	win	winned	wined	won	D	win is irregular: won.	4	2026-05-15 13:28:09	7	
+multiple_choice	NULL
+44	3	She ___ her keys on the table. (place)	place	placed	placd	placeed	B	place ??? + d: placed.	5	2026-05-15 13:28:09	
+7	multiple_choice	NULL
+45	3	I _____ (carry) all the bags myself yesterday.	NULL	NULL	NULL	NULL	NULL	carry: consonant+y ??? ied.	6	2026-05-15 
+13:28:09	7	fill_blank	carried
+46	3	He _____ (plan) the trip last month.	NULL	NULL	NULL	NULL	NULL	plan: short vowel+consonant ??? doubled n.	7	
+2026-05-15 13:28:09	7	fill_blank	planned
+47	3	We ___ to the beach last Sunday.	goed	gone	go	went	D	go ??? went.	1	2026-05-15 13:28:09	8	multiple_choice	NULL
+48	3	She ___ a cake for the party.	maked	make	made	maded	C	make ??? made.	2	2026-05-15 13:28:09	8	multiple_choice	NULL
+49	3	I ___ a great movie last night.	seen	seed	saw	see	C	see ??? saw.	3	2026-05-15 13:28:09	8	multiple_choice	NULL
+50	3	He ___ me a gift on my birthday.	gived	gave	give	gaven	B	give ??? gave.	4	2026-05-15 13:28:09	8	multiple_choice	
+NULL
+51	3	They ___ breakfast at 7 this morning.	eated	eat	eaten	ate	D	eat ??? ate.	5	2026-05-15 13:28:09	8	multiple_choice	
+NULL
+52	3	She ___ a lot of water after the run.	drinked	drunk	drank	drink	C	drink ??? drank.	6	2026-05-15 13:28:09	8	
+multiple_choice	NULL
+53	3	He _____ (buy) a new laptop last week.	NULL	NULL	NULL	NULL	NULL	buy ??? bought.	7	2026-05-15 13:28:09	8	
+fill_blank	bought
+54	3	She ___ go to school yesterday ??? she was ill.	doesn't	didn't	wasn't	isn't	B	Past negative: did not (didn't) + 
+base verb.	1	2026-05-15 13:28:09	9	multiple_choice	NULL
+55	3	___ you finish the report on time?	Were	Do	Have	Did	D	Past question: Did + subject + base verb.	2	2026-05-15 
+13:28:09	9	multiple_choice	NULL
+56	3	They ___ enjoy the concert at all.	don't	didn't	weren't	haven't	B	Past negative: didn't + base verb.	3	2026-05-15 
+13:28:09	9	multiple_choice	NULL
+57	3	___ she ___ the book before the exam?	Did / read	Does / read	Was / read	Did / reads	A	Did + subject + base verb 
+(read).	4	2026-05-15 13:28:09	9	multiple_choice	NULL
+58	3	Which sentence is CORRECT?	I didn't went there.	I didn't go there.	I not go there.	I went not there.	B	did not + 
+base verb (go, not went).	5	2026-05-15 13:28:09	9	multiple_choice	NULL
+59	3	_____ (you/see) that film last weekend?	NULL	NULL	NULL	NULL	NULL	Past question: Did + subject + base verb.	6	
+2026-05-15 13:28:09	9	fill_blank	Did you see
+60	4	I think it ___ tomorrow.	is going to rain	rained	will rain	rains	C	No visible evidence ??? will for prediction.	1	
+2026-05-15 13:28:09	10	multiple_choice	NULL
+61	4	Hold on, I ___ the door for you.	am going to open	open	will open	opened	C	Spontaneous decision at the moment ??? 
+will.	2	2026-05-15 13:28:09	10	multiple_choice	NULL
+62	4	She promised she ___ on time.	is going to be	would be	will be	was	C	Promise ??? will.	3	2026-05-15 13:28:09	10	
+multiple_choice	NULL
+63	4	___ you help me with this box?	Are	Do	Will	Were	C	Request/offer ??? Will.	4	2026-05-15 13:28:09	10	
+multiple_choice	NULL
+64	4	I think she ___ the competition.	wins	is winning	won	will win	D	Prediction ??? will.	5	2026-05-15 13:28:09	10	
+multiple_choice	NULL
+65	4	Don't worry, I _____ (help) you with that.	NULL	NULL	NULL	NULL	NULL	Spontaneous offer ??? will + base verb.	6	
+2026-05-15 13:28:09	10	fill_blank	will help
+66	4	Look at those dark clouds! It ___ rain.	will	is going to	goes to	shall	B	Visible evidence ??? is going to.	1	
+2026-05-15 13:28:09	11	multiple_choice	NULL
+67	4	I bought the tickets. We ___ fly to Tokyo.	will	are going to	shall	might	B	Prior plan ??? be going to.	2	
+2026-05-15 13:28:09	11	multiple_choice	NULL
+68	4	The phone is ringing. I ___ answer it.	am going to	will	shall	would	B	Spontaneous decision ??? will.	3	2026-05-15 
+13:28:09	11	multiple_choice	NULL
+69	4	She has decided ??? she ___ study medicine.	will	is going to	shall	might	B	Prior decision/intention ??? be going 
+to.	4	2026-05-15 13:28:09	11	multiple_choice	NULL
+70	4	I don't think he ___ pass ??? he never studies.	goes to pass	is going to pass	will pass	shall pass	C	General 
+prediction, no specific evidence ??? will.	5	2026-05-15 13:28:09	11	multiple_choice	NULL
+71	4	Watch out! You _____ (fall)! (visible danger)	NULL	NULL	NULL	NULL	NULL	Visible evidence of imminent event ??? be 
+going to.	6	2026-05-15 13:28:09	11	fill_blank	are going to fall
+72	5	If it ___ tomorrow, we will cancel the picnic.	rained	will rain	rains	is raining	C	If-clause: Present Simple.	1	
+2026-05-15 13:28:09	12	multiple_choice	NULL
+73	5	If you ___ harder, you will succeed.	worked	work	will work	are working	B	If-clause: Present Simple.	2	2026-05-15 
+13:28:09	12	multiple_choice	NULL
+74	5	She will be upset if you ___ late.	will be	are	were	be	B	If-clause: Present Simple (are).	3	2026-05-15 13:28:09	
+12	multiple_choice	NULL
+75	5	If he passes the exam, he ___ go to university.	would	will	can	might	B	Main clause: will + base verb.	4	
+2026-05-15 13:28:09	12	multiple_choice	NULL
+76	5	Which is a correct First Conditional?	If it will rain, I stay home.	If it rains, I will stay home.	If it rained, 
+I will stay home.	If it rains, I stayed home.	B	If + Present Simple, will + base verb.	5	2026-05-15 13:28:09	12	
+multiple_choice	NULL
+77	5	If she _____ (study) now, she will pass.	NULL	NULL	NULL	NULL	NULL	If-clause: Present Simple, she ??? studies.	6	
+2026-05-15 13:28:09	12	fill_blank	studies
+78	5	If I find your wallet, I ___ call you immediately.	would	will	am going to	should	B	Real possible future ??? will.	
+1	2026-05-15 13:28:09	13	multiple_choice	NULL
+79	5	If you ___ the bus, you will be late.	miss	will miss	missed	are missing	A	If-clause ??? Present Simple.	2	
+2026-05-15 13:28:09	13	multiple_choice	NULL
+80	5	We ___ be able to leave if we finish the work.	would	will	could	should	B	First conditional main clause ??? will.	
+3	2026-05-15 13:28:09	13	multiple_choice	NULL
+81	5	If the weather ___ nice, we'll go for a walk.	will be	would be	is	was	C	If-clause ??? Present Simple.	4	
+2026-05-15 13:28:09	13	multiple_choice	NULL
+82	5	If you _____ (not/hurry), we will miss the train.	NULL	NULL	NULL	NULL	NULL	Negative if-clause: don't + base verb.	
+5	2026-05-15 13:28:09	13	fill_blank	don't hurry
+83	5	If I see him, I _____ (tell) him the news.	NULL	NULL	NULL	NULL	NULL	Main clause: will + base verb.	6	2026-05-15 
+13:28:09	13	fill_blank	will tell
+84	5	If you come early, you ___ help us set up.	will	can	would	should	B	can expresses ability/possibility.	1	
+2026-05-15 13:28:09	14	multiple_choice	NULL
+85	5	If she asks, you ___ tell her the truth.	will	can	should	would	C	should expresses advice.	2	2026-05-15 13:28:09	
+14	multiple_choice	NULL
+86	5	If it rains tonight, they ___ cancel the match.	can	might	would	should	B	might expresses possibility.	3	
+2026-05-15 13:28:09	14	multiple_choice	NULL
+87	5	If you need help, I ___ be available.	would	will	might	should	C	might for uncertain availability.	4	2026-05-15 
+13:28:09	14	multiple_choice	NULL
+88	5	If we leave now, we ___ catch the 8 o'clock train.	can	might	will	should	C	will for certain result if condition 
+is met.	5	2026-05-15 13:28:09	14	multiple_choice	NULL
+89	6	If I ___ a million dollars, I would buy a house.	have	will have	had	would have	C	If-clause: Past Simple (had).	1	
+2026-05-15 13:28:09	15	multiple_choice	NULL
+90	6	If she ___ taller, she would be a basketball player.	is	was	were	would be	C	If-clause: were for hypothetical.	2	
+2026-05-15 13:28:09	15	multiple_choice	NULL
+91	6	He would travel the world if he ___ enough money.	has	will have	had	would have	C	If-clause: Past Simple (had).	3	
+2026-05-15 13:28:09	15	multiple_choice	NULL
+92	6	If I were you, I ___ apologize immediately.	will	would	could	should	B	Main clause: would + base verb.	4	
+2026-05-15 13:28:09	15	multiple_choice	NULL
+93	6	Which is a correct Second Conditional?	If I have time, I would call.	If I had time, I would call.	If I had time, 
+I will call.	If I would have time, I would call.	B	If + Past Simple, would + base verb.	5	2026-05-15 13:28:09	15	
+multiple_choice	NULL
+94	6	If she _____ (know) the answer, she would tell us.	NULL	NULL	NULL	NULL	NULL	If-clause: Past Simple (know ??? 
+knew).	6	2026-05-15 13:28:09	15	fill_blank	knew
+95	6	If it rains, I ___ stay inside. (likely)	would	will	could	might	B	Likely/real ??? First Conditional: will.	1	
+2026-05-15 13:28:09	16	multiple_choice	NULL
+96	6	If I ___ a bird, I would fly everywhere. (imaginary)	am	was	were	will be	C	Imaginary ??? Second Conditional: 
+were.	2	2026-05-15 13:28:09	16	multiple_choice	NULL
+97	6	If you exercise regularly, you ___ feel better. (real advice)	would	will	should	could	B	Real/possible ??? First 
+Conditional: will.	3	2026-05-15 13:28:09	16	multiple_choice	NULL
+98	6	If she ___ the president, she would change the laws. (hypothetical)	is	was	were	will be	C	Hypothetical ??? Second 
+Conditional: were.	4	2026-05-15 13:28:09	16	multiple_choice	NULL
+99	6	Which uses the Second Conditional correctly?	If he works hard, he will pass.	If he works hard, he would pass.	If 
+he worked hard, he would pass.	If he worked hard, he will pass.	C	If + Past Simple, would + base verb.	5	2026-05-15 
+13:28:09	16	multiple_choice	NULL
+100	6	If they _____ (live) in the city, they would have more options.	NULL	NULL	NULL	NULL	NULL	If-clause: Past Simple 
+(live ??? lived).	6	2026-05-15 13:28:09	16	fill_blank	lived
+101	7	The room ___ every day. (present passive)	cleans	is cleaned	are cleaned	was cleaned	B	Present simple passive: is 
++ past participle.	1	2026-05-15 13:28:09	17	multiple_choice	NULL
+102	7	This bridge ___ in 1920. (past passive)	built	is built	was built	were built	C	Past simple passive: was + past 
+participle.	2	2026-05-15 13:28:09	17	multiple_choice	NULL
+103	7	English ___ all over the world. (present passive)	speak	spoke	is spoken	are spoken	C	Present passive: is + 
+spoken.	3	2026-05-15 13:28:09	17	multiple_choice	NULL
+104	7	The letter ___ yesterday. (past passive)	sends	was sent	is sent	send	B	Past passive: was + past participle.	4	
+2026-05-15 13:28:09	17	multiple_choice	NULL
+105	7	Many cars ___ in Germany. (present passive)	makes	is made	are made	make	C	Many cars (plural) ??? are made.	5	
+2026-05-15 13:28:09	17	multiple_choice	NULL
+106	7	The painting ___ by Picasso. (past passive)	was painted	is painting	were painted	paints	A	Past passive: was + 
+painted.	6	2026-05-15 13:28:09	17	multiple_choice	NULL
+107	7	Active: "They clean the office every day." ??? Passive?	The office clean every day.	The office is cleaned every 
+day.	The office was cleaned every day.	The office are cleaned every day.	B	Present simple passive: is cleaned.	1	
+2026-05-15 13:28:09	18	multiple_choice	NULL
+108	7	Active: "Someone stole my bike." ??? Passive?	My bike stole.	My bike was stolen.	My bike is stolen.	My bike were 
+stolen.	B	Past simple passive: was stolen.	2	2026-05-15 13:28:09	18	multiple_choice	NULL
+109	7	Active: "They will finish the project." ??? Passive?	The project finished.	The project is finished.	The project 
+will be finished.	The project will finished.	C	Future passive: will be + past participle.	3	2026-05-15 13:28:09	18	
+multiple_choice	NULL
+110	7	Active: "She writes the report." ??? The report _____ by her.	NULL	NULL	NULL	NULL	NULL	Present simple passive: 
+is + written.	4	2026-05-15 13:28:09	18	fill_blank	is written
+111	7	Active: "They built this church in 1850." ??? This church _____ in 1850.	NULL	NULL	NULL	NULL	NULL	Past simple 
+passive: was + built.	5	2026-05-15 13:28:09	18	fill_blank	was built
+112	7	The report ___ already. (Present Perfect Passive)	has been written	is been written	was written	have been written	
+A	Present perfect passive: has been + past participle.	1	2026-05-15 13:28:09	19	multiple_choice	NULL
+113	7	The form ___ before you leave. (Modal Passive)	must sign	must be sign	must be signed	must signed	C	Modal 
+passive: must be + past participle.	2	2026-05-15 13:28:09	19	multiple_choice	NULL
+114	7	The new road ___ by year end. (Future Passive)	will finish	will be finished	will been finished	is being finished	
+B	Future passive: will be + past participle.	3	2026-05-15 13:28:09	19	multiple_choice	NULL
+115	7	The results ___ at the moment. (Present Continuous Passive)	is being analyzed	are being analyzed	are analyzed	
+were being analyzed	B	Present continuous passive: are being + past participle.	4	2026-05-15 13:28:09	19	
+multiple_choice	NULL
+116	7	A cure ___ yet for that disease. (Present Perfect Passive)	hasn't found	hasn't been found	wasn't found	isn't 
+found	B	Present perfect passive: has not been + past participle.	5	2026-05-15 13:28:09	19	multiple_choice	NULL
+117	7	The suspect _____ (question) by police right now. (continuous passive)	NULL	NULL	NULL	NULL	NULL	Present 
+continuous passive: is being + past participle.	6	2026-05-15 13:28:09	19	fill_blank	is being questioned
+118	8	The man ___ called yesterday is my uncle.	which	that	whose	where	B	that can refer to people in defining clauses.	
+1	2026-05-15 13:28:09	20	multiple_choice	NULL
+119	8	The book ___ I bought last week is very interesting.	who	whose	which	where	C	which refers to things.	2	
+2026-05-15 13:28:09	20	multiple_choice	NULL
+120	8	She is the student ___ won the prize.	which	that	where	whose	B	that refers to people in defining clauses.	3	
+2026-05-15 13:28:09	20	multiple_choice	NULL
+121	8	The car ___ is parked outside belongs to my neighbor.	who	whom	that	where	C	that refers to things.	4	2026-05-15 
+13:28:09	20	multiple_choice	NULL
+122	8	I met a doctor ___ specialized in neurology.	which	that	where	whose	B	that (or who) refers to a person.	5	
+2026-05-15 13:28:09	20	multiple_choice	NULL
+123	8	The film ___ we watched last night was amazing.	who	that	whose	whom	B	that refers to things.	6	2026-05-15 
+13:28:09	20	multiple_choice	NULL
+124	8	This is the city ___ I was born.	when	that	which	where	D	where refers to places.	1	2026-05-15 13:28:09	21	
+multiple_choice	NULL
+125	8	I remember the day ___ we first met.	where	which	when	that	C	when refers to time.	2	2026-05-15 13:28:09	21	
+multiple_choice	NULL
+126	8	The woman ___ car was stolen called the police.	who	which	that	whose	D	whose shows possession.	3	2026-05-15 
+13:28:09	21	multiple_choice	NULL
+127	8	The hotel ___ we stayed was very comfortable.	which	that	when	where	D	where refers to places.	4	2026-05-15 
+13:28:09	21	multiple_choice	NULL
+128	8	The student _____ phone rang was asked to leave.	NULL	NULL	NULL	NULL	NULL	whose shows possession.	5	2026-05-15 
+13:28:09	21	fill_blank	whose
+129	8	2020 was the year _____ everything changed.	NULL	NULL	NULL	NULL	NULL	when refers to a point in time.	6	
+2026-05-15 13:28:09	21	fill_blank	when
+130	8	Which sentence contains a NON-DEFINING relative clause?	The woman who called is my sister.	My sister, who lives 
+in Paris, is visiting.	The book that I bought is good.	I know the man that works here.	B	Non-defining: extra info in 
+commas, not essential.	1	2026-05-15 13:28:09	22	multiple_choice	NULL
+131	8	In a non-defining relative clause you can use:	that only	who or which (NOT that)	whose only	where only	B	that is 
+NOT used in non-defining clauses.	2	2026-05-15 13:28:09	22	multiple_choice	NULL
+132	8	The Eiffel Tower, ___ was built in 1889, is in Paris.	that	which	who	where	B	Non-defining about a thing ??? 
+which.	3	2026-05-15 13:28:09	22	multiple_choice	NULL
+133	8	My father, ___ is 60, still runs every morning.	that	which	who	whose	C	Non-defining about a person ??? who.	4	
+2026-05-15 13:28:09	22	multiple_choice	NULL
+134	8	Which sentence is punctuated CORRECTLY?	The man, who I met yesterday, was very kind.	The man who I met yesterday 
+was very kind.	The man who, I met yesterday, was very kind.	The man who I met, yesterday was very kind.	B	Defining 
+relative clause: no commas needed.	5	2026-05-15 13:28:09	22	multiple_choice	NULL
+135	13	She ___ her homework. (present perfect)	has finish	has finished	have finished	finished	B	She ??? has + past 
+participle.	1	2026-05-15 13:28:09	23	multiple_choice	NULL
+136	13	They ___ this film three times.	have seen	has seen	saw	see	A	They ??? have + past participle.	2	2026-05-15 
+13:28:09	23	multiple_choice	NULL
+137	13	I have never ___ sushi.	eat	ate	eaten	eated	C	Present perfect: have + past participle (eaten).	3	2026-05-15 
+13:28:09	23	multiple_choice	NULL
+138	13	___ you ever ___ to Japan?	Did / go	Have / been	Has / gone	Have / went	B	Have + subject + ever + past 
+participle (been).	4	2026-05-15 13:28:09	23	multiple_choice	NULL
+139	13	He ___ his keys ??? he can't get in.	lost	has lost	have lost	was losing	B	Recent action with present result ??? 
+has lost.	5	2026-05-15 13:28:09	23	multiple_choice	NULL
+140	13	We _____ (not/see) that film yet.	NULL	NULL	NULL	NULL	NULL	We ??? have not (haven't) + past participle.	6	
+2026-05-15 13:28:09	23	fill_blank	haven't seen
+141	13	_____ (she/finish) the report?	NULL	NULL	NULL	NULL	NULL	She ??? Has + subject + past participle.	7	2026-05-15 
+13:28:09	23	fill_blank	Has she finished
+142	13	I have lived here ___ 5 years.	since	for	ago	during	B	for + duration.	1	2026-05-15 13:28:09	24	multiple_choice	
+NULL
+143	13	She has worked at this company ___ 2018.	for	ago	since	during	C	since + starting point.	2	2026-05-15 13:28:09	
+24	multiple_choice	NULL
+144	13	Have you done your homework ___?	yet	just	already	since	A	yet in questions/negatives.	3	2026-05-15 13:28:09	24	
+multiple_choice	NULL
+145	13	I have ___ had breakfast ??? I'm not hungry.	yet	since	already	just	C	already: completed before expected time.	
+4	2026-05-15 13:28:09	24	multiple_choice	NULL
+146	13	He has ___ arrived ??? he's still in the car.	already	yet	just	for	C	just: very recently.	5	2026-05-15 13:28:09	
+24	multiple_choice	NULL
+147	13	They have known each other _____ they were children.	NULL	NULL	NULL	NULL	NULL	since + starting point in the 
+past.	6	2026-05-15 13:28:09	24	fill_blank	since
+148	13	Has she called you _____? No, not yet.	NULL	NULL	NULL	NULL	NULL	yet used in questions and negatives.	7	
+2026-05-15 13:28:09	24	fill_blank	yet
+149	13	I ___ my keys. I can't find them. (result now)	lost	have lost	had lost	did lose	B	Present result ??? Present 
+Perfect.	1	2026-05-15 13:28:09	25	multiple_choice	NULL
+150	13	She ___ in London from 2010 to 2015. (finished)	has lived	lived	has been living	is living	B	Specific finished 
+time ??? Past Simple.	2	2026-05-15 13:28:09	25	multiple_choice	NULL
+151	13	___ you ever eat raw fish? (experience)	Did	Have	Do	Had	B	Life experience ??? Present Perfect: Have.	3	
+2026-05-15 13:28:09	25	multiple_choice	NULL
+152	13	I ___ this book when I was 12. (specific past time)	have read	read	had read	reads	B	Specific past time ??? Past 
+Simple.	4	2026-05-15 13:28:09	25	multiple_choice	NULL
+153	13	They ___ three movies this week. (week not finished)	watched	have watched	had watched	watch	B	Unfinished time 
+period ??? Present Perfect.	5	2026-05-15 13:28:09	25	multiple_choice	NULL
+154	13	I _____ (already/eat), so I'm not hungry.	NULL	NULL	NULL	NULL	NULL	Present Perfect with already.	6	2026-05-15 
+13:28:09	25	fill_blank	have already eaten
+155	14	She is ___ engineer.	a	an	the	???	B	engineer starts with vowel sound /e/ ??? an.	1	2026-05-15 13:28:09	26	
+multiple_choice	NULL
+156	14	It was ___ unique experience.	an	a	the	???	B	unique starts with /j/ sound (consonant) ??? a.	2	2026-05-15 
+13:28:09	26	multiple_choice	NULL
+157	14	He has ___ university degree.	an	a	the	???	B	university starts with /j/ sound ??? a.	3	2026-05-15 13:28:09	26	
+multiple_choice	NULL
+158	14	I waited for ___ hour.	a	an	the	???	B	hour: silent h ??? vowel sound /a??/ ??? an.	4	2026-05-15 13:28:09	26	
+multiple_choice	NULL
+159	14	She bought ___ umbrella.	a	an	the	???	B	umbrella starts with /??/ vowel sound ??? an.	5	2026-05-15 13:28:09	26	
+multiple_choice	NULL
+160	14	That is ___ honest answer.	a	an	the	???	B	honest: silent h ??? vowel sound ??? an.	6	2026-05-15 13:28:09	26	
+multiple_choice	NULL
+161	14	I want to become _____ actor.	NULL	NULL	NULL	NULL	NULL	actor starts with vowel /??/ ??? an.	7	2026-05-15 
+13:28:09	26	fill_blank	an
+162	14	___ Sun is a star.	A	An	The	(no article)	C	Unique things ??? the.	1	2026-05-15 13:28:09	27	multiple_choice	NULL
+163	14	I love ___ music in general.	a	an	the	(no article)	D	General uncountable noun ??? no article.	2	2026-05-15 
+13:28:09	27	multiple_choice	NULL
+164	14	___ Amazon is the longest river in South America.	A	An	The	(no article)	C	Rivers ??? the.	3	2026-05-15 13:28:09	
+27	multiple_choice	NULL
+165	14	She speaks ___ French fluently.	a	an	the	(no article)	D	Languages ??? no article.	4	2026-05-15 13:28:09	27	
+multiple_choice	NULL
+166	14	I saw a dog in the park. ___ dog was very friendly.	A	An	The	(no article)	C	Second mention, specific ??? the.	5	
+2026-05-15 13:28:09	27	multiple_choice	NULL
+167	14	We eat ___ breakfast at 7 every morning.	a	an	the	(no article)	D	Meals without adjective ??? no article.	6	
+2026-05-15 13:28:09	27	multiple_choice	NULL
+168	14	_____ Pacific Ocean is the largest ocean on Earth.	NULL	NULL	NULL	NULL	NULL	Oceans ??? the.	7	2026-05-15 
+13:28:09	27	fill_blank	The
+169	15	"I am tired." ??? She said she ___ tired.	is	was	were	will be	B	Present Simple ??? Past Simple.	1	2026-05-15 
+13:28:09	28	multiple_choice	NULL
+170	15	"I will call you." ??? He said he ___ call me.	will	would	could	should	B	will ??? would.	2	2026-05-15 13:28:09	
+28	multiple_choice	NULL
+171	15	"We are leaving now." ??? They said they ___ leaving.	are	were	was	will be	B	Present Continuous ??? Past 
+Continuous.	3	2026-05-15 13:28:09	28	multiple_choice	NULL
+172	15	"I can swim." ??? She said she ___ swim.	can	could	would	should	B	can ??? could.	4	2026-05-15 13:28:09	28	
+multiple_choice	NULL
+173	15	"I have finished." ??? He said he ___ finished.	has	have	had	was	C	Present Perfect ??? Past Perfect.	5	
+2026-05-15 13:28:09	28	multiple_choice	NULL
+174	15	"I like coffee." ??? She told me she _____ coffee.	NULL	NULL	NULL	NULL	NULL	Present Simple ??? Past Simple 
+backshift.	6	2026-05-15 13:28:09	28	fill_blank	liked
+175	15	"Where do you live?" ??? He asked where I ___.	live	lived	was living	did live	B	Wh-question reported: no 
+do/does, tense backshift.	1	2026-05-15 13:28:09	29	multiple_choice	NULL
+176	15	"Do you like tea?" ??? She asked ___ I liked tea.	that	if	what	whether	D	Yes/no questions: if or whether.	2	
+2026-05-15 13:28:09	29	multiple_choice	NULL
+177	15	"Are you coming?" ??? She asked if I ___.	was coming	am coming	will come	came	A	Present Continuous ??? Past 
+Continuous.	3	2026-05-15 13:28:09	29	multiple_choice	NULL
+178	15	"What time is it?" ??? He asked what time ___.	it is	it was	is it	was it	B	Reported question: statement word 
+order.	4	2026-05-15 13:28:09	29	multiple_choice	NULL
+179	15	Which reported question is CORRECT?	She asked where did I work.	She asked where I worked.	She asked where I did 
+work.	She asked where do I work.	B	Reported: statement word order (no auxiliary inversion).	5	2026-05-15 13:28:09	29	
+multiple_choice	NULL
+180	15	"Can you help me?" ??? She asked _____ help her.	NULL	NULL	NULL	NULL	NULL	if + subject + could (can ??? could).	
+6	2026-05-15 13:28:09	29	fill_blank	if I could
+181	15	She ___ me that she was busy.	said	told	spoke	talked	B	tell + person: told me.	1	2026-05-15 13:28:09	30	
+multiple_choice	NULL
+182	15	He ___ that he would be late.	told	said	told me	spoke	B	say + that: said (no direct object).	2	2026-05-15 
+13:28:09	30	multiple_choice	NULL
+183	15	"I went to Paris." ??? She said she ___ to Paris.	went	had gone	has gone	goes	B	Past Simple ??? Past Perfect.	3	
+2026-05-15 13:28:09	30	multiple_choice	NULL
+184	15	Which sentence is INCORRECT?	She told that she was tired.	She said that she was tired.	She told me that she was 
+tired.	She said she was tired.	A	tell needs an object: told me/him/her.	4	2026-05-15 13:28:09	30	multiple_choice	NULL
+185	15	"I was sleeping." ??? He said he ___ sleeping.	was	had been	is	were	B	Past Continuous ??? Past Perfect 
+Continuous.	5	2026-05-15 13:28:09	30	multiple_choice	NULL
+186	15	"We are waiting outside." ??? They said they _____ outside.	NULL	NULL	NULL	NULL	NULL	Present Continuous ??? 
+Past Continuous.	6	2026-05-15 13:28:09	30	fill_blank	were waiting
+187	16	This box is ___ than that one. (heavy)	more heavy	heavier	heavyer	most heavy	B	1-syllable CVC: double consonant 
++ er.	1	2026-05-15 13:28:09	31	multiple_choice	NULL
+188	16	She is ___ than her sister. (tall)	more tall	tallest	taller	most tall	C	1-syllable ??? + er.	2	2026-05-15 
+13:28:09	31	multiple_choice	NULL
+189	16	This film is ___ than the book. (interesting)	interestinger	most interesting	more interesting	interestingest	C	
+3+ syllables ??? more + adjective.	3	2026-05-15 13:28:09	31	multiple_choice	NULL
+190	16	His English is ___ than mine. (good)	more good	gooder	best	better	D	good ??? better (irregular).	4	2026-05-15 
+13:28:09	31	multiple_choice	NULL
+191	16	Today is ___ than yesterday. (bad)	more bad	badder	worse	worst	C	bad ??? worse (irregular).	5	2026-05-15 
+13:28:09	31	multiple_choice	NULL
+192	16	She is _____ (happy) than she was last year.	NULL	NULL	NULL	NULL	NULL	happy: consonant+y ??? ier.	6	2026-05-15 
+13:28:09	31	fill_blank	happier
+193	16	This road is _____ (dangerous) than the other one.	NULL	NULL	NULL	NULL	NULL	3+ syllables ??? more + adjective.	
+7	2026-05-15 13:28:09	31	fill_blank	more dangerous
+194	16	Mount Everest is ___ mountain in the world. (high)	highest	the highest	most high	the most high	B	Superlative: 
+the + adjective + est.	1	2026-05-15 13:28:09	32	multiple_choice	NULL
+195	16	She is ___ student in the class. (intelligent)	the most intelligent	the intelligentst	the intelligenter	most 
+intelligent	A	3+ syllables ??? the most + adjective.	2	2026-05-15 13:28:09	32	multiple_choice	NULL
+196	16	He is ___ person I know. (funny)	the most funny	funniest	the funniest	most funniest	C	funny: y ??? iest, add 
+the.	3	2026-05-15 13:28:09	32	multiple_choice	NULL
+197	16	This is ___ film I have ever seen. (bad)	the baddest	the most bad	the worst	the worse	C	bad ??? the worst 
+(irregular).	4	2026-05-15 13:28:09	32	multiple_choice	NULL
+198	16	Who is ___ player on the team? (good)	the most good	the goodest	the better	the best	D	good ??? the best 
+(irregular).	5	2026-05-15 13:28:09	32	multiple_choice	NULL
+199	16	That was _____ (expensive) meal I have ever had.	NULL	NULL	NULL	NULL	NULL	3+ syllables: the most + adjective.	6	
+2026-05-15 13:28:09	32	fill_blank	the most expensive
+200	16	She is _____ (tall) girl in her school.	NULL	NULL	NULL	NULL	NULL	1-syllable: the + adjective + est.	7	
+2026-05-15 13:28:09	32	fill_blank	the tallest
+201	16	This bag is ___ that one. (equal weight)	as heavy than	as heavy as	heavy as	heavier as	B	Equal comparison: as + 
+adjective + as.	1	2026-05-15 13:28:09	33	multiple_choice	NULL
+202	16	He is ___ his father. (not same height)	not as tall as	not taller than	less tall that	not as tall that	A	
+Negative equal: not as + adjective + as.	2	2026-05-15 13:28:09	33	multiple_choice	NULL
+203	16	She works ___ anyone in the office. (hardest)	as harder as	the hardest	the most hard	harder	B	Superlative: the 
+hardest.	3	2026-05-15 13:28:09	33	multiple_choice	NULL
+204	16	This puzzle is ___ I expected. (more difficult)	as difficult as	less difficult	more difficult than	the most 
+difficult	C	Comparative: more + adj + than.	4	2026-05-15 13:28:09	33	multiple_choice	NULL
+205	16	This is ___ decision he has ever made. (worst)	the worse	worst	the worst	the most bad	C	bad ??? the worst 
+(irregular superlative).	5	2026-05-15 13:28:09	33	multiple_choice	NULL
+206	16	She runs _____ (fast) as her brother.	NULL	NULL	NULL	NULL	NULL	Equal comparison: as + adjective + as.	6	
+2026-05-15 13:28:09	33	fill_blank	as fast
+
+

@@ -1,110 +1,133 @@
-import React, { useEffect, useState, useCallback, useRef } from 'react';
+import React, { useEffect, useState, useCallback, useRef, useMemo } from 'react';
 import { useParams, useSearchParams, useNavigate } from 'react-router-dom';
 import api from '../../api/axios';
 
 const PART_INFO = {
-  1: { label: 'Photographs',          skill: 'Listening', hasGroup: false },
-  2: { label: 'Question-Response',    skill: 'Listening', hasGroup: false },
-  3: { label: 'Short Conversations',  skill: 'Listening', hasGroup: true  },
-  4: { label: 'Short Talks',          skill: 'Listening', hasGroup: true  },
-  5: { label: 'Incomplete Sentences', skill: 'Reading',   hasGroup: false },
-  6: { label: 'Text Completion',      skill: 'Reading',   hasGroup: true  },
-  7: { label: 'Reading Comprehension',skill: 'Reading',   hasGroup: true  },
+  1: { label: 'Photographs',           skill: 'listening', hasGroup: false },
+  2: { label: 'Question-Response',     skill: 'listening', hasGroup: false },
+  3: { label: 'Short Conversations',   skill: 'listening', hasGroup: true  },
+  4: { label: 'Short Talks',           skill: 'listening', hasGroup: true  },
+  5: { label: 'Incomplete Sentences',  skill: 'reading',   hasGroup: false },
+  6: { label: 'Text Completion',       skill: 'reading',   hasGroup: true  },
+  7: { label: 'Reading Comprehension', skill: 'reading',   hasGroup: true  },
 };
-const OPTS = ['A', 'B', 'C', 'D'];
+const OPTS = ['A','B','C','D'];
 
 function fmtTime(s) {
-  const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), ss = s % 60;
+  const h = Math.floor(s/3600), m = Math.floor((s%3600)/60), ss = s%60;
   return h > 0
     ? `${h}:${String(m).padStart(2,'0')}:${String(ss).padStart(2,'0')}`
     : `${String(m).padStart(2,'0')}:${String(ss).padStart(2,'0')}`;
 }
 
 export default function ToeicTestPage() {
-  const { id }            = useParams();
-  const [sp]              = useSearchParams();
-  const navigate          = useNavigate();
-  const mode              = sp.get('mode') === 'practice' ? 'practice' : 'mock';
+  const { id }   = useParams();
+  const [sp]     = useSearchParams();
+  const navigate = useNavigate();
+  const mode     = sp.get('mode') === 'practice' ? 'practice' : 'mock';
 
-  const [test,        setTest]        = useState(null);
-  const [questions,   setQuestions]   = useState([]); // flat, ordered
-  const [answers,     setAnswers]     = useState({}); // { qId: 'A'|'B'|'C'|'D' }
-  const [revealed,    setRevealed]    = useState({}); // practice: { qId: true }
-  const [activePart,  setActivePart]  = useState(null); // practice part selector
-  const [currentIdx,  setCurrentIdx]  = useState(0);
-  const [timeLeft,    setTimeLeft]    = useState(null);
-  const [submitting,  setSubmitting]  = useState(false);
-  const [feedback,    setFeedback]    = useState(null); // { isCorrect, correctAnswer, explanation }
-  const timerRef = useRef(null);
+  const [test,           setTest]           = useState(null);
+  const [questions,      setQuestions]      = useState([]);
+  const [answers,        setAnswers]        = useState({});
+  const [revealed,       setRevealed]       = useState({});  // practice: per-question reveal
+  const [section,        setSection]        = useState(null);
+  const [activePart,     setActivePart]     = useState(null);
+  const [activeGroupIdx, setActiveGroupIdx] = useState(0);
+  const [timeLeft,       setTimeLeft]       = useState(null);
+  const [submitting,     setSubmitting]     = useState(false);
+  const [reviewMode,     setReviewMode]     = useState(false); // practice: review all
+  const [retryIds,       setRetryIds]       = useState(null);  // Set of ids to retry, null=all
 
-  /* ── Load test ── */
+  const timerRef     = useRef(null);
+  const questionRefs = useRef({});
+
+  /* ── Load & sort ── */
   useEffect(() => {
     api.get(`/toeic/tests/${id}`).then(r => {
       const data = r.data.data;
       setTest(data);
-      const qs = data.questions || [];
+      const qs = (data.questions || []).sort((a,b) => a.question_num - b.question_num);
       setQuestions(qs);
-      if (mode === 'mock') {
-        setTimeLeft((data.duration_minutes || 120) * 60);
-      }
+      if (mode === 'mock') setTimeLeft((data.duration_minutes || 120) * 60);
     });
   }, [id, mode]);
 
-  /* ── Timer (mock only) ── */
+  /* ── Timer ── */
   useEffect(() => {
     if (mode !== 'mock' || timeLeft === null) return;
     if (timeLeft <= 0) { handleSubmit(); return; }
-    timerRef.current = setTimeout(() => setTimeLeft(t => t - 1), 1000);
+    timerRef.current = setTimeout(() => setTimeLeft(t => t-1), 1000);
     return () => clearTimeout(timerRef.current);
   }, [timeLeft, mode]);
 
-  /* ── Questions for current part (practice) ── */
-  const partQuestions = activePart
-    ? questions.filter(q => q.part_num === activePart)
-    : [];
+  /* ── Derived ── */
+  const questionsByPart = useMemo(() => {
+    const map = {};
+    questions.forEach(q => { if (!map[q.part_num]) map[q.part_num]=[]; map[q.part_num].push(q); });
+    return map;
+  }, [questions]);
 
-  const currentQ = mode === 'practice' ? partQuestions[currentIdx] : questions[currentIdx];
+  const groupsByPart = useMemo(() => {
+    const map = {};
+    questions.forEach(q => {
+      if (!q.group) return;
+      const p = q.part_num;
+      if (!map[p]) map[p] = {};
+      if (!map[p][q.group.id]) map[p][q.group.id] = { group: q.group, questions: [] };
+      map[p][q.group.id].questions.push(q);
+    });
+    const result = {};
+    Object.keys(map).forEach(p => {
+      result[p] = Object.values(map[p]).map(g => ({
+        ...g, questions: g.questions.sort((a,b) => a.question_num - b.question_num)
+      })).sort((a,b) => a.questions[0].question_num - b.questions[0].question_num);
+    });
+    return result;
+  }, [questions]);
 
-  /* ── Answer handling ── */
-  const handleAnswer = useCallback((opt) => {
-    if (!currentQ) return;
-    if (mode === 'practice' && revealed[currentQ.id]) return; // already answered
+  const availableParts    = useMemo(() => Object.keys(questionsByPart).map(Number).sort((a,b)=>a-b), [questionsByPart]);
+  const listeningParts    = useMemo(() => availableParts.filter(p => PART_INFO[p]?.skill==='listening'), [availableParts]);
+  const readingParts      = useMemo(() => availableParts.filter(p => PART_INFO[p]?.skill==='reading'),   [availableParts]);
+  const hasListening      = listeningParts.length > 0;
+  const hasReading        = readingParts.length > 0;
 
-    setAnswers(prev => ({ ...prev, [currentQ.id]: opt }));
+  /* ── Auto-set section/part on load ── */
+  useEffect(() => {
+    if (!availableParts.length) return;
+    const defaultSection = hasListening ? 'listening' : 'reading';
+    setSection(defaultSection);
+    setActivePart(hasListening ? listeningParts[0] : readingParts[0]);
+  }, [availableParts.length]);
 
-    if (mode === 'practice') {
-      const isCorrect = opt === currentQ.correct_answer;
-      setRevealed(prev => ({ ...prev, [currentQ.id]: true }));
-      setFeedback({
-        isCorrect,
-        correctAnswer: currentQ.correct_answer,
-        explanation: currentQ.explanation || '',
-      });
-    }
-  }, [currentQ, mode, revealed]);
+  const sectionParts = section === 'listening' ? listeningParts : readingParts;
 
-  /* ── Practice: next question ── */
-  const handleFeedbackNext = () => {
-    setFeedback(null);
-    const list = partQuestions;
-    if (currentIdx < list.length - 1) {
-      setCurrentIdx(i => i + 1);
-    } else {
-      // Practice part done — show summary
-      const correct = list.filter(q => answers[q.id] === q.correct_answer).length;
-      alert(`Hoàn thành Part ${activePart}!\n✅ ${correct}/${list.length} câu đúng`);
-      setActivePart(null);
-      setCurrentIdx(0);
-      setRevealed({});
-    }
-  };
+  useEffect(() => {
+    if (!sectionParts.length || sectionParts.includes(activePart)) return;
+    setActivePart(sectionParts[0]);
+    setActiveGroupIdx(0);
+  }, [section]);
+
+  const activePartGroups = groupsByPart[activePart] || [];
+  const currentGroup     = activePartGroups[activeGroupIdx] || null;
+
+  /* ── Answer ── */
+  const handleAnswer = useCallback((qId, opt) => {
+    setAnswers(prev => ({ ...prev, [qId]: opt }));
+  }, []);
+
+  const handleReveal = useCallback((qId) => {
+    setRevealed(prev => ({ ...prev, [qId]: true }));
+  }, []);
 
   /* ── Submit ── */
   const handleSubmit = useCallback(async () => {
     if (submitting) return;
     if (mode === 'mock') {
-      const unanswered = questions.filter(q => !answers[q.id]).length;
-      if (unanswered > 0 && !window.confirm(`Còn ${unanswered} câu chưa trả lời. Nộp bài?`)) return;
+      const un = questions.filter(q => !answers[q.id]).length;
+      if (un > 0 && !window.confirm(`Còn ${un} câu chưa trả lời. Nộp bài?`)) return;
+    } else {
+      const un = questions.filter(q => !answers[q.id]).length;
+      if (un > 0 && !window.confirm(`Còn ${un} câu chưa trả lời. Nộp bài?`)) return;
     }
     clearTimeout(timerRef.current);
     setSubmitting(true);
@@ -116,9 +139,10 @@ export default function ToeicTestPage() {
         mode: mode === 'mock' ? 'mock_test' : 'practice',
         time_taken_seconds: timeTaken,
       });
-      const { attempt_id, streak, achievements_unlocked, daily_task_completed, first_day_bonus, exp_earned } = r.data.data;
-      navigate(`/toeic/result/${attempt_id}`, {
-        state: { streak, achievements_unlocked, daily_task_completed, first_day_bonus, exp_earned },
+      const d = r.data.data;
+      navigate(`/toeic/result/${d.attempt_id}`, {
+        state: { streak: d.streak, achievements_unlocked: d.achievements_unlocked,
+          daily_task_completed: d.daily_task_completed, first_day_bonus: d.first_day_bonus, exp_earned: d.exp_earned },
       });
     } catch {
       alert('Lỗi khi nộp bài. Vui lòng thử lại.');
@@ -126,311 +150,375 @@ export default function ToeicTestPage() {
     }
   }, [submitting, mode, questions, answers, test, timeLeft, id, navigate]);
 
-  if (!test) return (
-    <div className="d-flex justify-content-center align-items-center" style={{ height: '60vh' }}>
-      <div className="spinner-border text-primary"/>
-    </div>
-  );
+  /* ── Practice: enter review ── */
+  const handleEnterReview = () => {
+    const all = {};
+    questions.forEach(q => { all[q.id] = true; });
+    setRevealed(all);
+    setReviewMode(true);
+    setRetryIds(null);
+    // Go to first part
+    if (availableParts.length) {
+      const p = availableParts[0];
+      setSection(PART_INFO[p]?.skill || 'reading');
+      setActivePart(p);
+      setActiveGroupIdx(0);
+    }
+  };
 
-  /* ────────────────── PRACTICE: Part Selector ────────────────── */
-  if (mode === 'practice' && !activePart) {
-    const parts = [...new Set(questions.map(q => q.part_num))].sort((a, b) => a - b);
-    return (
-      <div className="container py-5" style={{ maxWidth: 700 }}>
-        <button className="btn btn-link text-muted p-0 mb-3" onClick={() => navigate('/toeic')}>
-          ← Quay lại danh sách
-        </button>
-        <h3 className="fw-bold mb-1">{test.title}</h3>
-        <p className="text-muted mb-4">Chọn Part để bắt đầu luyện tập</p>
-        <div className="row g-3">
-          {parts.map(p => {
-            const info = PART_INFO[p] || {};
-            const pqs = questions.filter(q => q.part_num === p);
-            const answered = pqs.filter(q => revealed[q.id]).length;
-            return (
-              <div key={p} className="col-sm-6">
-                <div className="card border rounded-3 p-3 h-100" style={{ cursor: 'pointer' }}
-                  onClick={() => { setActivePart(p); setCurrentIdx(0); }}>
-                  <div className="d-flex align-items-center gap-3">
-                    <div className="rounded-circle d-flex align-items-center justify-content-center fw-bold"
-                      style={{ width: 44, height: 44, background: info.skill === 'Listening' ? '#e3f2fd' : '#e8f5e9', color: info.skill === 'Listening' ? '#1565c0' : '#2e7d32', fontSize: 18 }}>
-                      {info.skill === 'Listening' ? '🎧' : '📖'}
-                    </div>
-                    <div>
-                      <div className="fw-bold">Part {p}</div>
-                      <div className="text-muted small">{info.label}</div>
-                    </div>
-                  </div>
-                  <div className="mt-2">
-                    <div className="d-flex justify-content-between small text-muted mb-1">
-                      <span>{pqs.length} câu</span>
-                      <span>{answered}/{pqs.length} đã làm</span>
-                    </div>
-                    <div style={{ height: 4, borderRadius: 2, background: '#e9ecef', overflow: 'hidden' }}>
-                      <div style={{ height: '100%', width: `${pqs.length ? (answered / pqs.length) * 100 : 0}%`, background: '#4caf50', borderRadius: 2 }}/>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        {mode === 'practice' && questions.length > 0 && (
-          <div className="mt-4 text-center">
-            <button className="btn btn-primary px-5" onClick={handleSubmit} disabled={submitting}>
-              {submitting ? <span className="spinner-border spinner-border-sm me-2"/> : null}
-              Nộp tất cả & Xem điểm
-            </button>
-          </div>
-        )}
-      </div>
-    );
-  }
+  /* ── Practice: retry wrong ── */
+  const handleRetryWrong = () => {
+    const wrongIds = new Set(questions.filter(q => answers[q.id] && answers[q.id] !== q.correct_answer).map(q => q.id));
+    if (!wrongIds.size) { alert('Không có câu nào sai! 🎉'); return; }
+    setAnswers(prev => { const n={...prev}; wrongIds.forEach(id => delete n[id]); return n; });
+    setRevealed(prev => { const n={...prev}; wrongIds.forEach(id => delete n[id]); return n; });
+    setRetryIds(wrongIds);
+    setReviewMode(false);
+    const first = questions.find(q => wrongIds.has(q.id));
+    if (first) {
+      setSection(PART_INFO[first.part_num]?.skill || 'reading');
+      setActivePart(first.part_num);
+      setActiveGroupIdx(0);
+    }
+  };
 
-  /* ────────────────── PRACTICE: Question View ────────────────── */
-  if (mode === 'practice') {
-    const list = partQuestions;
-    const q = currentQ;
-    const info = PART_INFO[q?.part_num] || {};
-    const isAnswered = q && revealed[q.id];
-    const progress = list.length ? ((currentIdx + 1) / list.length) * 100 : 0;
+  /* ── Sidebar click ── */
+  const handleSidebarClick = (q) => {
+    const skill = PART_INFO[q.part_num]?.skill;
+    if (skill && skill !== section) setSection(skill);
+    setActivePart(q.part_num);
+    const groups = groupsByPart[q.part_num] || [];
+    if (groups.length) {
+      const gIdx = groups.findIndex(g => g.questions.some(gq => gq.id === q.id));
+      setActiveGroupIdx(gIdx >= 0 ? gIdx : 0);
+    }
+    setTimeout(() => questionRefs.current[q.id]?.scrollIntoView({ behavior:'smooth', block:'center' }), 100);
+  };
+
+  /* ── Render question ── */
+  const renderQuestion = (q) => {
+    const isRevealed  = reviewMode || !!revealed[q.id];
+    const userAnswer  = answers[q.id];
+    const isCorrect   = userAnswer === q.correct_answer;
+    // In retry mode, skip questions not in retryIds
+    if (retryIds && !retryIds.has(q.id)) return null;
 
     return (
-      <div className="container py-4" style={{ maxWidth: 760 }}>
-        <style>{`
-          .tp-opt { display:flex; align-items:center; gap:12px; padding:14px 16px; border-radius:10px; border:2px solid #dee2e6; cursor:pointer; transition:all .15s; margin-bottom:8px; }
-          .tp-opt:hover:not(.locked) { border-color:#1565c0; background:#f0f7ff; }
-          .tp-opt.selected { border-color:#1565c0; background:#e3f0ff; }
-          .tp-opt.correct { border-color:#2e7d32; background:#e8f5e9; }
-          .tp-opt.wrong   { border-color:#c62828; background:#ffebee; }
-          .tp-opt.dim     { opacity:.45; }
-          .tp-fb-overlay { position:fixed; bottom:0; left:0; right:0; z-index:200; }
-          .tp-fb-box { padding:20px 24px; border-top:4px solid; display:flex; align-items:center; gap:16px; }
-          .tp-fb-box.correct { background:#e8f5e9; border-color:#4caf50; }
-          .tp-fb-box.wrong   { background:#ffebee; border-color:#f44336; }
-          .tp-fb-icon { font-size:28px; }
-          .tp-audio-btn { border:none; background:#e3f2fd; color:#1565c0; border-radius:8px; padding:8px 16px; font-weight:600; font-size:13px; cursor:pointer; display:flex; align-items:center; gap:6px; }
-          .tp-audio-btn:hover { background:#bbdefb; }
-        `}</style>
+      <div key={q.id} ref={el => questionRefs.current[q.id] = el} className="toeic-qcard">
 
-        {/* Header */}
-        <div className="d-flex justify-content-between align-items-center mb-3">
-          <button className="btn btn-link text-muted p-0" onClick={() => { setActivePart(null); setCurrentIdx(0); }}>
-            ← Part {activePart}
-          </button>
-          <span className="text-muted small fw-semibold">{currentIdx + 1} / {list.length}</span>
+        <div style={{ display:'flex', alignItems:'baseline', gap:8, marginBottom:10 }}>
+          <span style={{ background:'var(--app-text-2)', color:'var(--app-surface)', borderRadius:4, padding:'2px 8px', fontSize:11, fontWeight:700, flexShrink:0 }}>
+            Q{q.question_num}
+          </span>
+          {q.question_text
+            ? <span style={{ fontWeight:600, lineHeight:1.5, fontSize:14, color:'var(--app-text)' }}>{q.question_text}</span>
+            : <span style={{ color:'var(--app-text-3)', fontStyle:'italic', fontSize:13 }}>(Nghe audio và chọn đáp án)</span>}
         </div>
 
-        {/* Progress */}
-        <div style={{ height: 4, borderRadius: 2, background: '#e9ecef', overflow: 'hidden', marginBottom: 24 }}>
-          <div style={{ height: '100%', width: `${progress}%`, background: '#1565c0', borderRadius: 2, transition: 'width .3s' }}/>
-        </div>
-
-        {/* Group context */}
-        {q?.group && (
-          <div className="card mb-4 border-0" style={{ background: '#f8f9fa' }}>
-            <div className="card-body">
-              {q.group.audio_url && (
-                <audio controls className="w-100 mb-2" key={q.group.audio_url}>
-                  <source src={q.group.audio_url}/>
-                </audio>
-              )}
-              {q.group.image_url && (
-                <img src={q.group.image_url} alt="" className="img-fluid rounded mb-2" style={{ maxHeight: 280 }}/>
-              )}
-              {q.group.passage && (
-                <div className="small" style={{ whiteSpace: 'pre-wrap', maxHeight: 280, overflowY: 'auto', lineHeight: 1.7 }}>
-                  {q.group.passage}
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Individual audio/image (Parts 1, 2) */}
-        {!q?.group && q?.audio_url && (
-          <audio controls className="w-100 mb-3" key={q.audio_url}>
+        {!q.group && q.audio_url && (
+          <audio controls style={{ width:'100%', height:34, marginBottom:8 }} key={q.audio_url}>
             <source src={q.audio_url}/>
           </audio>
         )}
-        {q?.image_url && (
-          <img src={q.image_url} alt="" className="img-fluid rounded mb-3" style={{ maxHeight: 260 }}/>
-        )}
+        {q.image_url && <img src={q.image_url} alt="" style={{ maxHeight:180, borderRadius:6, marginBottom:8, display:'block' }}/>}
 
-        {/* Question */}
-        <div className="mb-3">
-          <span className="badge bg-secondary me-2">Q{q?.question_num || currentIdx + 1}</span>
-          <span className="fw-semibold">{q?.question_text || `(Nghe audio và chọn đáp án)`}</span>
-        </div>
-
-        {/* Options */}
         <div>
-          {OPTS.filter(o => q?.[`option_${o.toLowerCase()}`]).map(opt => {
-            const txt = q[`option_${opt.toLowerCase()}`];
-            const isSelected = answers[q.id] === opt;
-            const isCorrectOpt = q.correct_answer === opt;
-            let cls = 'tp-opt';
-            if (isAnswered) {
+          {OPTS.filter(o => q[`option_${o.toLowerCase()}`]).map(opt => {
+            const txt         = q[`option_${opt.toLowerCase()}`];
+            const isSel       = userAnswer === opt;
+            const isCorrectOp = q.correct_answer === opt;
+            let cls = 'toeic-opt';
+            let lbg = 'var(--app-border)', lcol = 'var(--app-text-2)';
+            if (isRevealed) {
               cls += ' locked';
-              if (isCorrectOpt)           cls += ' correct';
-              else if (isSelected)        cls += ' wrong';
-              else                        cls += ' dim';
-            } else if (isSelected)        cls += ' selected';
+              if (isCorrectOp)        { cls += ' ok';  lbg='#4caf50'; lcol='white'; }
+              else if (isSel)         { cls += ' bad'; lbg='#f44336'; lcol='white'; }
+              else                    { cls += ' dim'; }
+            } else if (isSel)         { cls += ' sel'; lbg='#1565c0'; lcol='white'; }
             return (
-              <div key={opt} className={cls} onClick={() => handleAnswer(opt)}>
-                <span className={`badge ${isAnswered && isCorrectOpt ? 'bg-success' : isAnswered && isSelected ? 'bg-danger' : 'bg-light border text-muted'}`}
-                  style={{ width: 24, flexShrink: 0 }}>{opt}</span>
+              <div key={opt} className={cls} onClick={() => !isRevealed && handleAnswer(q.id, opt)}>
+                <span style={{ width:22, height:22, borderRadius:4, display:'flex', alignItems:'center',
+                  justifyContent:'center', fontSize:11, fontWeight:700, flexShrink:0, background:lbg, color:lcol }}>
+                  {opt}
+                </span>
                 <span>{txt}</span>
               </div>
             );
           })}
         </div>
 
-        {/* Feedback overlay */}
-        {feedback && (
-          <div className="tp-fb-overlay">
-            <div className={`tp-fb-box ${feedback.isCorrect ? 'correct' : 'wrong'}`}>
-              <div className="tp-fb-icon">{feedback.isCorrect ? '✅' : '❌'}</div>
-              <div style={{ flex: 1 }}>
-                <div className="fw-bold">{feedback.isCorrect ? 'Correct!' : `Incorrect — Đáp án: ${feedback.correctAnswer}`}</div>
-                {feedback.explanation && <div className="small text-muted mt-1">{feedback.explanation}</div>}
-              </div>
-              <button className="btn btn-primary px-4" onClick={handleFeedbackNext}>
-                {currentIdx < list.length - 1 ? 'Next →' : 'Xem kết quả Part'}
+        {/* Practice: Xem đáp án / Explanation */}
+        {mode === 'practice' && (
+          <div style={{ marginTop:8 }}>
+            {!isRevealed && userAnswer && (
+              <button onClick={() => handleReveal(q.id)}
+                style={{ border:'1px solid var(--app-border)', background:'var(--app-surface-2)', color:'var(--app-text-3)',
+                  borderRadius:5, padding:'5px 12px', fontSize:12, cursor:'pointer', fontWeight:600 }}>
+                Xem đáp án
               </button>
-            </div>
+            )}
+            {isRevealed && (
+              <div className={`toeic-feedback ${isCorrect?'ok':'bad'}`}>
+                <div style={{ fontWeight:700, marginBottom: q.explanation?6:0 }}>
+                  {isCorrect ? '✅ Chính xác!' : `❌ Đáp án đúng: ${q.correct_answer}`}
+                </div>
+                {q.explanation && <div style={{ lineHeight:1.7, marginTop:4 }}>{q.explanation}</div>}
+              </div>
+            )}
           </div>
         )}
       </div>
     );
-  }
+  };
 
-  /* ────────────────── MOCK TEST ────────────────── */
-  const parts = [...new Set(questions.map(q => q.part_num))].sort((a, b) => a - b);
-  const answered = Object.keys(answers).length;
-  const q = currentQ;
-
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
-      <style>{`
-        .mock-opt { display:flex; align-items:center; gap:12px; padding:14px 16px; border-radius:10px; border:2px solid #dee2e6; cursor:pointer; transition:all .15s; margin-bottom:8px; }
-        .mock-opt:hover { border-color:#1565c0; background:#f0f7ff; }
-        .mock-opt.selected { border-color:#1565c0; background:#e3f0ff; }
-        .mock-qbtn { width:36px; height:36px; border-radius:6px; border:1.5px solid #dee2e6; background:none; font-size:12px; font-weight:600; cursor:pointer; transition:all .12s; }
-        .mock-qbtn:hover { border-color:#1565c0; }
-        .mock-qbtn.answered { background:#1565c0; color:white; border-color:#1565c0; }
-        .mock-qbtn.active { outline:2px solid #f57c00; outline-offset:1px; }
-        .mock-sidebar { width:260px; flex-shrink:0; border-right:1px solid #dee2e6; overflow-y:auto; padding:16px; background:#fafafa; }
-        .mock-main { flex:1; overflow-y:auto; padding:24px; }
-        .mock-header { background:white; border-bottom:1px solid #dee2e6; padding:10px 20px; display:flex; align-items:center; gap:16px; flex-shrink:0; }
-        .mock-timer { font-family:monospace; font-size:1.15rem; font-weight:700; color:${timeLeft !== null && timeLeft < 300 ? '#c62828' : '#1565c0'}; }
-      `}</style>
-
-      {/* Header */}
-      <div className="mock-header">
-        <button className="btn btn-link text-muted p-0 me-2" onClick={() => navigate('/toeic')}>←</button>
-        <div className="fw-bold flex-fill text-truncate">{test.title}</div>
-        {timeLeft !== null && (
-          <div className="mock-timer d-flex align-items-center gap-1">
-            ⏱ {fmtTime(timeLeft)}
+  /* ── Content panel (left): passage for Reading groups ── */
+  const contentPanel = useMemo(() => {
+    if (!currentGroup || section === 'listening') return null;
+    const { group } = currentGroup;
+    if (!group.audio_url && !group.image_url && !group.passage) return null;
+    return (
+      <div style={{ height:'100%', overflowY:'auto', padding:'18px 20px' }}>
+        {group.audio_url && (
+          <audio controls style={{ width:'100%', height:34, marginBottom:12 }} key={group.audio_url}>
+            <source src={group.audio_url}/>
+          </audio>
+        )}
+        {group.image_url && (
+          <img src={group.image_url} alt="" style={{ maxWidth:'100%', borderRadius:6, marginBottom:12, display:'block' }}/>
+        )}
+        {group.passage && (
+          <div style={{ whiteSpace:'pre-wrap', lineHeight:1.9, fontSize:14, color:'#212529' }}>
+            {group.passage}
           </div>
         )}
-        <div className="text-muted small me-3">{answered}/{questions.length}</div>
+      </div>
+    );
+  }, [currentGroup, section]);
+
+  /* ── Questions panel ── */
+  const renderQuestionsPanel = () => {
+    if (!activePart) return null;
+    const hasGrps = PART_INFO[activePart]?.hasGroup;
+
+    if (!hasGrps) {
+      const pqs = (questionsByPart[activePart] || []).filter(q => !retryIds || retryIds.has(q.id));
+      if (!pqs.length) return <div style={{ color:'#adb5bd', textAlign:'center', padding:'40px 0', fontSize:14 }}>Không có câu nào cần ôn trong Part này</div>;
+      return <>{pqs.map(q => renderQuestion(q))}</>;
+    }
+
+    if (!currentGroup) return <div style={{ color:'#adb5bd', textAlign:'center', padding:'40px 0' }}>Không có dữ liệu</div>;
+    const gqs = currentGroup.questions.filter(q => !retryIds || retryIds.has(q.id));
+    if (!gqs.length) return <div style={{ color:'#adb5bd', textAlign:'center', padding:'40px 0', fontSize:14 }}>Không có câu nào cần ôn trong nhóm này</div>;
+    return <>{gqs.map(q => renderQuestion(q))}</>;
+  };
+
+  /* ── Loading ── */
+  if (!test || !section) return (
+    <div className="d-flex justify-content-center align-items-center" style={{ height:'60vh' }}>
+      <div className="spinner-border text-primary"/>
+    </div>
+  );
+
+  /* ── Layout vars ── */
+  const answered      = Object.keys(answers).length;
+  const totalQ        = retryIds ? retryIds.size : questions.length;
+  const hasGrps       = PART_INFO[activePart]?.hasGroup;
+  const showGroupTabs = hasGrps && activePartGroups.length > 0;
+  const showContent   = hasGrps && section === 'reading' && contentPanel !== null;
+  const timerWarn     = timeLeft !== null && timeLeft < 300;
+
+  return (
+    <div style={{ display:'flex', flexDirection:'column', height:'100vh', overflow:'hidden', background:'var(--app-bg)' }}>
+      <style>{`
+        .tsec { padding:8px 20px; border:none; background:transparent; font-weight:700; font-size:13px; cursor:pointer; color:var(--app-text-3); border-bottom:3px solid transparent; transition:all .15s; white-space:nowrap; }
+        .tsec.on { color:#1565c0; border-bottom-color:#1565c0; }
+        [data-bs-theme="dark"] .tsec.on { color:#7baef5; border-bottom-color:#7baef5; }
+        .tpart { padding:7px 16px; border:1px solid var(--app-border); border-bottom:none; background:var(--app-surface-3); font-size:12px; font-weight:700; color:var(--app-text-3); cursor:pointer; border-radius:6px 6px 0 0; transition:all .12s; white-space:nowrap; }
+        .tpart.on { background:var(--app-surface); color:#1565c0; }
+        [data-bs-theme="dark"] .tpart.on { color:#7baef5; }
+        .tpart:hover:not(.on) { background:var(--app-surface-2); }
+        .tgrp { padding:5px 13px; border:1.5px solid var(--app-border); background:var(--app-surface); font-size:12px; font-weight:700; color:var(--app-text-2); cursor:pointer; border-radius:5px; white-space:nowrap; transition:all .12s; }
+        .tgrp.on { background:#1565c0; color:white; border-color:#1565c0; }
+        [data-bs-theme="dark"] .tgrp.on { background:#2563eb; border-color:#3b82f6; }
+        .tgrp:hover:not(.on) { background:var(--app-surface-2); }
+        .tqbtn { width:33px; height:33px; border-radius:5px; border:1.5px solid var(--app-border); background:var(--app-surface); font-size:11px; font-weight:700; cursor:pointer; color:var(--app-text-2); transition:all .1s; }
+        .tqbtn:hover { border-color:#1565c0; }
+        .tqbtn.done { background:#1565c0; color:white; border-color:#1565c0; }
+        .tqbtn.grp  { outline:2px solid #f57c00; outline-offset:1px; }
+        .tqbtn.wrong-done { background:#e53935; color:white; border-color:#e53935; }
+        .toeic-qcard { background:var(--app-surface); border:1px solid var(--app-border); border-radius:8px; padding:16px 18px; margin-bottom:16px; }
+        .toeic-opt { display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:7px; border:1.5px solid var(--app-border); background:transparent; color:var(--app-text); cursor:pointer; margin-bottom:5px; transition:all .1s; font-size:13px; }
+        .toeic-opt:hover { border-color:#1565c0; background:var(--app-surface-2); }
+        .toeic-opt.sel  { border-color:#1565c0; background:rgba(21,101,192,.1); }
+        .toeic-opt.ok   { border-color:var(--correct-border)!important; background:var(--correct-bg)!important; color:var(--app-text)!important; }
+        .toeic-opt.bad  { border-color:var(--wrong-border)!important;   background:var(--wrong-bg)!important;   color:var(--app-text)!important; }
+        .toeic-opt.dim  { opacity:.4; cursor:default; }
+        .toeic-opt.locked { cursor:default; }
+        .toeic-feedback { border-radius:6px; padding:10px 14px; font-size:13px; margin-top:8px; }
+        .toeic-feedback.ok  { background:var(--correct-bg); border:1px solid var(--correct-border); color:var(--correct-text); }
+        .toeic-feedback.bad { background:var(--hint-bg);    border:1px solid var(--hint-border);    color:var(--hint-text);    }
+      `}</style>
+
+      {/* ── HEADER ── */}
+      <div style={{ background:'var(--app-surface)', borderBottom:'1px solid var(--app-border)', padding:'8px 16px',
+        display:'flex', alignItems:'center', gap:12, flexShrink:0 }}>
+        <button onClick={() => navigate('/toeic')}
+          style={{ border:'none', background:'none', color:'#6c757d', cursor:'pointer', fontSize:18, padding:'0 4px' }}>←</button>
+        <span style={{ fontWeight:700, fontSize:14, flex:1, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>
+          {test.title}
+          {mode === 'practice' && <span style={{ marginLeft:8, fontSize:11, background:'#e8f5e9', color:'#2e7d32', padding:'2px 8px', borderRadius:10, fontWeight:700 }}>LUYỆN TẬP</span>}
+          {retryIds && <span style={{ marginLeft:8, fontSize:11, background:'#fff3e0', color:'#e65100', padding:'2px 8px', borderRadius:10, fontWeight:700 }}>ÔN LẠI {retryIds.size} CÂU SAI</span>}
+        </span>
+        <span style={{ fontSize:12, color:'#6c757d', whiteSpace:'nowrap' }}>{answered}/{totalQ}</span>
+        {timeLeft !== null && (
+          <span style={{ fontFamily:'monospace', fontWeight:700, fontSize:15, color:timerWarn?'#c62828':'#1565c0', whiteSpace:'nowrap' }}>
+            ⏱ {fmtTime(timeLeft)}
+          </span>
+        )}
+        {/* Practice actions */}
+        {mode === 'practice' && !reviewMode && (
+          <>
+            <button onClick={handleEnterReview}
+              style={{ border:'1px solid #dee2e6', background:'#f8f9fa', color:'#495057', borderRadius:6, padding:'5px 12px', fontSize:12, cursor:'pointer', fontWeight:600, whiteSpace:'nowrap' }}>
+              Xem lại bài
+            </button>
+            <button onClick={handleRetryWrong}
+              style={{ border:'1px solid #f44336', background:'#ffebee', color:'#c62828', borderRadius:6, padding:'5px 12px', fontSize:12, cursor:'pointer', fontWeight:600, whiteSpace:'nowrap' }}>
+              Ôn lại câu sai
+            </button>
+          </>
+        )}
+        {mode === 'practice' && reviewMode && (
+          <button onClick={() => { setReviewMode(false); setRetryIds(null); const all={}; setRevealed(all); }}
+            style={{ border:'1px solid #dee2e6', background:'#f8f9fa', color:'#495057', borderRadius:6, padding:'5px 12px', fontSize:12, cursor:'pointer', fontWeight:600 }}>
+            Tiếp tục làm
+          </button>
+        )}
         <button className="btn btn-primary btn-sm px-3" onClick={handleSubmit} disabled={submitting}>
-          {submitting ? <span className="spinner-border spinner-border-sm me-1"/> : null}
+          {submitting && <span className="spinner-border spinner-border-sm me-1"/>}
           Nộp bài
         </button>
       </div>
 
-      <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
-        {/* Sidebar: navigator */}
-        <div className="mock-sidebar">
-          {parts.map(p => {
-            const pqs = questions.filter(q => q.part_num === p);
-            const startIdx = questions.findIndex(q => q.part_num === p);
-            return (
-              <div key={p} className="mb-3">
-                <div className="small fw-bold text-muted mb-1">Part {p} — {PART_INFO[p]?.label}</div>
-                <div className="d-flex flex-wrap gap-1">
-                  {pqs.map((pq, i) => {
-                    const gIdx = startIdx + i;
-                    return (
-                      <button key={pq.id}
-                        className={`mock-qbtn ${answers[pq.id] ? 'answered' : ''} ${currentIdx === gIdx ? 'active' : ''}`}
-                        onClick={() => setCurrentIdx(gIdx)}>
-                        {pq.question_num || gIdx + 1}
-                      </button>
-                    );
-                  })}
-                </div>
+      {/* ── SECTION TABS ── */}
+      {(hasListening && hasReading) && (
+        <div style={{ background:'var(--app-surface)', borderBottom:'1px solid var(--app-border)', display:'flex', flexShrink:0 }}>
+          {hasListening && (
+            <button className={`tsec ${section==='listening'?'on':''}`}
+              onClick={() => { setSection('listening'); setActiveGroupIdx(0); }}>
+              🎧 Listening
+            </button>
+          )}
+          {hasReading && (
+            <button className={`tsec ${section==='reading'?'on':''}`}
+              onClick={() => { setSection('reading'); setActiveGroupIdx(0); }}>
+              📖 Reading
+            </button>
+          )}
+        </div>
+      )}
+
+      {/* ── BODY ── */}
+      <div style={{ display:'flex', flex:1, overflow:'hidden' }}>
+
+        {/* ── CENTER ── */}
+        <div style={{ flex:1, display:'flex', flexDirection:'column', overflow:'hidden' }}>
+
+          {/* Part tabs */}
+          <div style={{ background:'#f0f2f5', borderBottom:'1px solid #dee2e6', padding:'8px 16px 0',
+            display:'flex', gap:4, flexShrink:0, flexWrap:'wrap' }}>
+            {sectionParts.map(p => (
+              <button key={p} className={`tpart ${activePart===p?'on':''}`}
+                onClick={() => { setActivePart(p); setActiveGroupIdx(0); }}>
+                Part {p} — {PART_INFO[p]?.label}
+              </button>
+            ))}
+          </div>
+
+          {/* 2-panel: content + questions */}
+          <div style={{ flex:1, display:'flex', overflow:'hidden', background:'var(--app-surface-2)' }}>
+
+            {/* Left: passage (only when reading group with content) */}
+            {showContent && (
+              <div style={{ width:'45%', background:'var(--app-surface)', borderRight:'1px solid var(--app-border)', overflow:'hidden' }}>
+                {contentPanel}
               </div>
-            );
-          })}
+            )}
+            {/* Left: blank placeholder for grouped listening */}
+            {hasGrps && !showContent && (
+              <div style={{ width:'45%', background:'var(--app-surface)', borderRight:'1px solid var(--app-border)',
+                display:'flex', alignItems:'center', justifyContent:'center' }}>
+                <span style={{ color:'var(--app-border)', fontSize:13 }}>—</span>
+              </div>
+            )}
+
+            {/* Right: questions */}
+            <div style={{ flex:1, overflowY:'auto', padding:'16px 20px' }}>
+              {renderQuestionsPanel()}
+            </div>
+          </div>
+
+          {/* Fixed group tabs */}
+          {showGroupTabs && (
+            <div style={{ borderTop:'2px solid var(--app-border)', background:'var(--app-surface-3)', padding:'7px 14px',
+              display:'flex', gap:5, flexShrink:0, overflowX:'auto', flexWrap:'nowrap' }}>
+              {activePartGroups.map((grpObj, i) => {
+                const nums  = grpObj.questions.map(q => q.question_num);
+                const label = nums.length===1 ? `Q${nums[0]}` : `Questions ${Math.min(...nums)}–${Math.max(...nums)}`;
+                return (
+                  <button key={i} className={`tgrp ${activeGroupIdx===i?'on':''}`}
+                    onClick={() => setActiveGroupIdx(i)}>
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
+          )}
         </div>
 
-        {/* Main: current question */}
-        <div className="mock-main">
-          {!q ? (
-            <div className="text-center text-muted py-5">Chọn câu hỏi từ menu bên trái</div>
-          ) : (
-            <>
-              {/* Group context */}
-              {q.group && (
-                <div className="card mb-4 border-0 bg-light">
-                  <div className="card-body">
-                    {q.group.audio_url && (
-                      <audio controls className="w-100 mb-2" key={q.group.audio_url}>
-                        <source src={q.group.audio_url}/>
-                      </audio>
-                    )}
-                    {q.group.image_url && (
-                      <img src={q.group.image_url} alt="" className="img-fluid rounded mb-2" style={{ maxHeight: 280 }}/>
-                    )}
-                    {q.group.passage && (
-                      <div className="small border rounded p-3 bg-white" style={{ whiteSpace: 'pre-wrap', maxHeight: 300, overflowY: 'auto', lineHeight: 1.75 }}>
-                        {q.group.passage}
-                      </div>
-                    )}
+        {/* ── RIGHT SIDEBAR ── */}
+        <div style={{ width:220, flexShrink:0, borderLeft:'1px solid var(--app-border)', background:'var(--app-surface)',
+          display:'flex', flexDirection:'column', overflow:'hidden' }}>
+
+          {/* Timer */}
+          {timeLeft !== null && (
+            <div style={{ padding:'12px 14px', borderBottom:'1px solid var(--app-border-light)', textAlign:'center', flexShrink:0 }}>
+              <div style={{ fontSize:10, fontWeight:700, color:'var(--app-text-3)', textTransform:'uppercase', letterSpacing:1, marginBottom:2 }}>Thời gian</div>
+              <div style={{ fontFamily:'monospace', fontSize:20, fontWeight:700, color:timerWarn?'#c62828':'#1565c0' }}>
+                {fmtTime(timeLeft)}
+              </div>
+            </div>
+          )}
+
+          {/* Question navigator */}
+          <div style={{ flex:1, overflowY:'auto', padding:'10px 12px' }}>
+            {sectionParts.map(p => {
+              const pqs    = (questionsByPart[p] || []).sort((a,b)=>a.question_num-b.question_num);
+              const pGroups = groupsByPart[p] || [];
+              return (
+                <div key={p} style={{ marginBottom:14 }}>
+                  <div style={{ fontSize:10, fontWeight:800, color:'var(--app-text-2)', marginBottom:5, lineHeight:1.3 }}>
+                    Part {p} – {PART_INFO[p]?.label}
+                  </div>
+                  <div style={{ display:'flex', flexWrap:'wrap', gap:3 }}>
+                    {pqs.map(q => {
+                      const inCurGrp = activePart===p && currentGroup?.questions.some(gq=>gq.id===q.id);
+                      const inCurPart= activePart===p && !PART_INFO[p]?.hasGroup;
+                      const isWrong  = reviewMode && answers[q.id] && answers[q.id] !== q.correct_answer;
+                      const isDone   = !!answers[q.id];
+                      return (
+                        <button key={q.id}
+                          className={`tqbtn ${isWrong?'wrong-done':isDone?'done':''} ${inCurGrp||inCurPart?'grp':''}`}
+                          onClick={() => handleSidebarClick(q)}>
+                          {q.question_num}
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
-              )}
-
-              {/* Individual audio / image */}
-              {!q.group && q.audio_url && (
-                <audio controls className="w-100 mb-3" key={q.audio_url}>
-                  <source src={q.audio_url}/>
-                </audio>
-              )}
-              {q.image_url && (
-                <img src={q.image_url} alt="" className="img-fluid rounded mb-3" style={{ maxHeight: 260 }}/>
-              )}
-
-              {/* Question */}
-              <div className="d-flex align-items-baseline gap-2 mb-3">
-                <span className="badge bg-secondary">Q{q.question_num || currentIdx + 1}</span>
-                <span className="fw-semibold">{q.question_text || '(Nghe audio và chọn đáp án)'}</span>
-              </div>
-
-              {/* Options */}
-              {OPTS.filter(o => q[`option_${o.toLowerCase()}`]).map(opt => (
-                <div key={opt}
-                  className={`mock-opt ${answers[q.id] === opt ? 'selected' : ''}`}
-                  onClick={() => setAnswers(prev => ({ ...prev, [q.id]: opt }))}>
-                  <span className={`badge ${answers[q.id] === opt ? 'bg-primary' : 'bg-light border text-muted'}`}
-                    style={{ width: 24, flexShrink: 0 }}>{opt}</span>
-                  <span>{q[`option_${opt.toLowerCase()}`]}</span>
-                </div>
-              ))}
-
-              {/* Navigation */}
-              <div className="d-flex justify-content-between mt-4">
-                <button className="btn btn-outline-secondary" disabled={currentIdx === 0}
-                  onClick={() => setCurrentIdx(i => i - 1)}>← Câu trước</button>
-                <button className="btn btn-outline-primary" disabled={currentIdx === questions.length - 1}
-                  onClick={() => setCurrentIdx(i => i + 1)}>Câu tiếp →</button>
-              </div>
-            </>
-          )}
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

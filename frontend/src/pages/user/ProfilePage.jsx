@@ -3,10 +3,10 @@ import { useAuth } from '../../contexts/AuthContext';
 import api from '../../api/axios';
 
 const RARITY_COLOR = {
-  common:    { bg: '#f0f0f0', text: '#555', border: '#ccc' },
-  rare:      { bg: '#e8f0fe', text: '#1a56db', border: '#93c5fd' },
-  epic:      { bg: '#f3e8ff', text: '#7c3aed', border: '#c4b5fd' },
-  legendary: { bg: '#fff7ed', text: '#c2410c', border: '#fdba74' },
+  common:    { bg: 'var(--rar-common-bg)',  text: 'var(--rar-common-c)',  border: 'var(--rar-common-bd)'  },
+  rare:      { bg: 'var(--rar-rare-bg)',    text: 'var(--rar-rare-c)',    border: 'var(--rar-rare-bd)'    },
+  epic:      { bg: 'var(--rar-epic-bg)',    text: 'var(--rar-epic-c)',    border: 'var(--rar-epic-bd)'    },
+  legendary: { bg: 'var(--rar-legend-bg)',  text: 'var(--rar-legend-c)',  border: 'var(--rar-legend-bd)'  },
 };
 
 const CATEGORY_LABEL = {
@@ -226,7 +226,7 @@ const styles = {
   tabRow: {
     display: 'flex',
     gap: 8,
-    borderBottom: '2px solid #e5e7eb',
+    borderBottom: '2px solid var(--app-border)',
     marginBottom: 4,
   },
   tabBtn: {
@@ -237,22 +237,22 @@ const styles = {
     fontFamily: 'var(--font-body)',
     fontSize: '.88rem',
     fontWeight: 500,
-    color: '#6b7280',
+    color: 'var(--app-text-3)',
     borderBottom: '2px solid transparent',
     marginBottom: -2,
     transition: 'all .2s',
   },
   tabBtnActive: {
-    color: '#1e40af',
-    borderBottomColor: '#1e40af',
+    color: 'var(--rar-rare-c)',
+    borderBottomColor: 'var(--rar-rare-c)',
     fontWeight: 700,
   },
   streakCard: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    background: 'linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%)',
-    border: '1px solid #fde68a',
+    background: 'var(--rar-legend-bg)',
+    border: '1px solid var(--rar-legend-bd)',
     borderRadius: 12,
     padding: '12px 20px',
     marginBottom: 16,
@@ -260,16 +260,17 @@ const styles = {
   },
   streakMain: { display: 'flex', alignItems: 'center', gap: 12 },
   streakIcon: { fontSize: '1.6rem' },
-  streakNum: { fontSize: '1.8rem', fontWeight: 800, lineHeight: 1, color: '#92400e' },
-  streakLabel: { fontSize: '.72rem', color: '#b45309', fontWeight: 500, marginTop: 2 },
+  streakNum: { fontSize: '1.8rem', fontWeight: 800, lineHeight: 1, color: 'var(--rar-legend-c)' },
+  streakLabel: { fontSize: '.72rem', color: 'var(--rar-legend-c)', fontWeight: 500, marginTop: 2 },
   streakStats: { display: 'flex', gap: 12 },
   streakStat: { textAlign: 'center' },
-  streakStatVal: { display: 'block', fontWeight: 700, fontSize: '1rem', color: '#78350f' },
-  streakStatLabel: { fontSize: '.65rem', color: '#92400e' },
+  streakStatVal: { display: 'block', fontWeight: 700, fontSize: '1rem', color: 'var(--rar-legend-c)' },
+  streakStatLabel: { fontSize: '.65rem', color: 'var(--rar-legend-c)' },
   multiplierBadge: {
-    background: '#fbbf24',
+    background: 'rgba(251,191,36,.25)',
     borderRadius: 8,
     padding: '4px 10px',
+    border: '1px solid rgba(251,191,36,.4)',
   },
   catHeader: {
     display: 'flex',
@@ -277,14 +278,15 @@ const styles = {
     justifyContent: 'space-between',
     marginBottom: 10,
   },
-  catLabel: { fontWeight: 700, fontSize: '.92rem', fontFamily: 'var(--font-body)' },
+  catLabel: { fontWeight: 700, fontSize: '.92rem', fontFamily: 'var(--font-body)', color: 'var(--app-text)' },
   catCount: {
     fontSize: '.75rem',
-    background: '#e5e7eb',
+    background: 'var(--app-surface-3)',
     borderRadius: 12,
     padding: '2px 10px',
-    color: '#6b7280',
+    color: 'var(--app-text-3)',
     fontWeight: 600,
+    border: '1px solid var(--app-border)',
   },
   achGrid: {
     display: 'grid',
@@ -300,6 +302,6 @@ const styles = {
   },
   achIcon: { fontSize: '1.6rem', marginBottom: 4 },
   achName: { fontSize: '.7rem', fontWeight: 700, lineHeight: 1.3, fontFamily: 'var(--font-body)' },
-  achExp: { fontSize: '.62rem', color: '#059669', fontWeight: 600, marginTop: 4 },
-  achDate: { fontSize: '.58rem', color: '#9ca3af', marginTop: 2 },
+  achExp: { fontSize: '.62rem', color: 'var(--correct-text)', fontWeight: 600, marginTop: 4 },
+  achDate: { fontSize: '.58rem', color: 'var(--app-text-3)', marginTop: 2 },
 };

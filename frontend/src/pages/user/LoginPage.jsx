@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import api from '../../api/axios';
 import {
   PARTICLES, RUNES, TEYVAT_NATIONS, SPARKS,
   RINGS, CONSTELLATION_STARS, CONSTELLATION_LINES,
@@ -16,6 +17,7 @@ export default function LoginPage() {
   const [form, setForm]           = useState({ email: '', password: '' });
   const [error, setError]         = useState('');
   const [errors, setErrors]       = useState({});
+  const [unverifiedEmail, setUnverifiedEmail] = useState(''); // email needs verification
   const [loading, setLoading]     = useState(false);
   const [showPass, setShowPass]   = useState(false);
   const [mounted, setMounted]     = useState(false);
@@ -74,7 +76,12 @@ export default function LoginPage() {
       const userData = await login(form.email, form.password);
       navigate(userData.role === 'admin' ? '/admin' : '/');
     } catch (err) {
-      setError(err.response?.data?.message || 'Đăng nhập thất bại');
+      const errData = err.response?.data;
+      if (errData?.code === 'EMAIL_NOT_VERIFIED') {
+        setUnverifiedEmail(errData.email || form.email);
+      } else {
+        setError(errData?.message || 'Đăng nhập thất bại');
+      }
     } finally { setLoading(false); }
   };
 
@@ -302,6 +309,28 @@ export default function LoginPage() {
 
               {error && <div className="ws-err"><span>✦</span>{error}</div>}
 
+              {/* Email not verified banner */}
+              {unverifiedEmail && (
+                <div style={{ background:'rgba(255,193,7,.1)', border:'1px solid rgba(255,193,7,.3)',
+                  borderRadius:10, padding:'14px 16px', marginBottom:12, fontSize:13 }}>
+                  <div style={{ color:'#ffd54f', fontWeight:700, marginBottom:6 }}>
+                    ✉️ Email chưa được xác thực
+                  </div>
+                  <div style={{ color:'#b8a98a', lineHeight:1.6, marginBottom:10 }}>
+                    Tài khoản <strong style={{ color:'#c8a96e' }}>{unverifiedEmail}</strong> cần nhập mã OTP trước khi đăng nhập.
+                  </div>
+                  <div style={{ display:'flex', gap:8 }}>
+                    <ResendVerificationBtn email={unverifiedEmail} />
+                    <a href={`/verify-email?email=${encodeURIComponent(unverifiedEmail)}`}
+                      style={{ border:'1px solid rgba(200,169,110,.4)', background:'rgba(200,169,110,.12)', color:'#c8a96e',
+                        borderRadius:6, padding:'5px 14px', fontSize:12, fontWeight:600, textDecoration:'none',
+                        display:'inline-flex', alignItems:'center' }}>
+                      Nhập OTP →
+                    </a>
+                  </div>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit}>
                 {/* Email */}
                 <div className="ws-field">
@@ -368,5 +397,34 @@ export default function LoginPage() {
         </div>
       </div>
     </>
+  );
+}
+
+function ResendVerificationBtn({ email }) {
+  const [loading, setLoading] = useState(false);
+  const [sent,    setSent]    = useState(false);
+  const [cd,      setCd]      = useState(0);
+
+  useEffect(() => {
+    if (cd <= 0) return;
+    const t = setTimeout(() => setCd(c => c-1), 1000);
+    return () => clearTimeout(t);
+  }, [cd]);
+
+  const handle = async () => {
+    setLoading(true);
+    try {
+      await api.post('/auth/resend-otp', { email });
+      setSent(true); setCd(60);
+    } catch { } finally { setLoading(false); }
+  };
+
+  if (sent) return <span style={{ color:'#81c784', fontSize:12 }}>✅ Email đã được gửi lại!</span>;
+  return (
+    <button onClick={handle} disabled={loading || cd > 0} type="button"
+      style={{ border:'1px solid rgba(200,169,110,.4)', background:'rgba(200,169,110,.12)', color:'#c8a96e',
+        borderRadius:6, padding:'5px 14px', fontSize:12, cursor:'pointer', fontWeight:600 }}>
+      {loading ? '⏳...' : cd > 0 ? `Gửi lại sau ${cd}s` : '📨 Gửi lại email xác thực'}
+    </button>
   );
 }

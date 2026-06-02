@@ -1,0 +1,16 @@
+﻿
+id	username	email	password	full_name	avatar	dob	role	is_active	total_exp	level	created_at	updated_at
+1	admin	admin@englishapp.com	$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi	Administrator	NULL	NULL	
+admin	1	0	1	2026-05-28 14:24:10	2026-05-28 14:24:10
+2	D? C?n 	tt7365590@gmail.com	$2a$10$UAjRfspAEY3cKHD3bHndMedyYm4uU25nf2cAyrCdOdPGphJnuleDu	Tr?n Nguy?n Th? Thu Th?y	
+NULL	NULL	user	1	2026	2026	0000-00-00 00:00:00	0000-00-00 00:00:00
+3	nguyenvana	nguyenvana@gmail.com	$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi	Nguy?n V?n A	NULL	NULL	
+user	1	2026	2026	0000-00-00 00:00:00	0000-00-00 00:00:00
+4	tranthib	tranthib@gmail.com	$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi	Tr?n Th? B	NULL	NULL	user	1	
+2026	2026	0000-00-00 00:00:00	0000-00-00 00:00:00
+5	lehoanc	lehoangc@gmail.com	$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi	L? Ho?ng C	NULL	NULL	user	1	
+2026	2026	0000-00-00 00:00:00	0000-00-00 00:00:00
+6	Xuy?n	trachxuyen@gmail.com	$2a$10$l2vL0e.nB0CPjWFqvgi5EOVH9.uGW.pl04o6RK3UWO28hB93zRb8y	Tr?ch Xuy?n	NULL	NULL	user	1	
+2026	2026	0000-00-00 00:00:00	0000-00-00 00:00:00
+
+

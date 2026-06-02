@@ -44,18 +44,18 @@ const updateProfile = async (req, res) => {
 
 // GET /api/admin/users
 const getAllUsers = async (req, res) => {
-  const { search, page = 1, limit = 20 } = req.query;
+  const { search, role, locked, page = 1, limit = 20 } = req.query;
   const offset = (page - 1) * limit;
   try {
-    let sql = 'SELECT id, username, email, full_name, role, is_active, created_at FROM users';
-    const params = [];
-    if (search) { sql += ' WHERE username LIKE ? OR email LIKE ?'; params.push(`%${search}%`, `%${search}%`); }
-    sql += ' ORDER BY created_at DESC LIMIT ? OFFSET ?';
-    params.push(Number(limit), Number(offset));
+    const where = [], params = [];
+    if (search)      { where.push('(username LIKE ? OR email LIKE ? OR full_name LIKE ?)'); params.push(`%${search}%`,`%${search}%`,`%${search}%`); }
+    if (role)        { where.push('role = ?');      params.push(role); }
+    if (locked==='1'){ where.push('is_active = 0'); }
 
-    const [rows] = await pool.query(sql, params);
-    const [[{ total }]] = await pool.query('SELECT COUNT(*) as total FROM users');
-    return res.json({ success: true, data: rows, total, page: Number(page), limit: Number(limit) });
+    const whereClause = where.length ? ' WHERE ' + where.join(' AND ') : '';
+    const [rows]    = await pool.query(`SELECT id, username, email, full_name, avatar, role, is_active, total_exp, level, created_at FROM users${whereClause} ORDER BY created_at DESC LIMIT ? OFFSET ?`, [...params, Number(limit), Number(offset)]);
+    const [[{cnt}]] = await pool.query(`SELECT COUNT(*) as cnt FROM users${whereClause}`, params);
+    return res.json({ success: true, data: rows, total: cnt, page: Number(page), limit: Number(limit) });
   } catch (err) {
     return res.status(500).json({ success: false, message: 'Lỗi server' });
   }
@@ -86,4 +86,54 @@ const getAchievements = async (req, res) => {
   }
 };
 
-module.exports = { getProfile, updateProfile, getAllUsers, toggleLock, getAchievements };
+// PUT /api/admin/users/:id/role
+const changeRole = async (req, res) => {
+  const { id } = req.params;
+  const { role } = req.body;
+  if (!['user', 'admin'].includes(role))
+    return res.status(400).json({ success: false, message: 'Role không hợp lệ' });
+  if (Number(id) === req.user.id)
+    return res.status(400).json({ success: false, message: 'Không thể đổi role của chính mình' });
+  try {
+    const [rows] = await pool.query('SELECT id FROM users WHERE id = ?', [id]);
+    if (!rows.length) return res.status(404).json({ success: false, message: 'Người dùng không tồn tại' });
+    await pool.query('UPDATE users SET role = ? WHERE id = ?', [role, id]);
+    return res.json({ success: true, message: `Đã đổi role thành ${role}` });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'Lỗi server' });
+  }
+};
+
+// DELETE /api/admin/users/:id
+const deleteUser = async (req, res) => {
+  const { id } = req.params;
+  if (Number(id) === req.user.id)
+    return res.status(400).json({ success: false, message: 'Không thể xóa tài khoản của chính mình' });
+  try {
+    const [rows] = await pool.query('SELECT id, role FROM users WHERE id = ?', [id]);
+    if (!rows.length) return res.status(404).json({ success: false, message: 'Người dùng không tồn tại' });
+    if (rows[0].role === 'admin')
+      return res.status(403).json({ success: false, message: 'Không thể xóa tài khoản admin' });
+    await pool.query('DELETE FROM users WHERE id = ?', [id]);
+    return res.json({ success: true, message: 'Đã xóa người dùng' });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'Lỗi server' });
+  }
+};
+
+// GET /api/admin/users/stats
+const getUserStats = async (req, res) => {
+  try {
+    const [[total]]  = await pool.query('SELECT COUNT(*) as cnt FROM users');
+    const [[active]] = await pool.query('SELECT COUNT(*) as cnt FROM users WHERE is_active = 1');
+    const [[locked]] = await pool.query('SELECT COUNT(*) as cnt FROM users WHERE is_active = 0');
+    const [[admins]] = await pool.query("SELECT COUNT(*) as cnt FROM users WHERE role = 'admin'");
+    return res.json({ success: true, data: {
+      total: total.cnt, active: active.cnt, locked: locked.cnt, admins: admins.cnt
+    }});
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'Lỗi server' });
+  }
+};
+
+module.exports = { getProfile, updateProfile, getAllUsers, toggleLock, getAchievements, changeRole, deleteUser, getUserStats };

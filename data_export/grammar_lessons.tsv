@@ -1,0 +1,144 @@
+﻿
+id	title	content	level	order_index	created_by	created_at	updated_at	youtube_url
+1	Present Perfect Tense	<h2>Present Perfect Tense</h2><p>Connects the <strong>past with the 
+present</strong>.</p><h3>Structure: <code>have / has + past 
+participle</code></h3><table><tr><th>Subject</th><th>Form</th><th>Example</th></tr><tr><td>I / You / We / 
+They</td><td>have + p.p.</td><td>I <strong>have visited</strong> Paris.</td></tr><tr><td>He / She / It</td><td>has + 
+p.p.</td><td>She <strong>has finished</strong> her 
+work.</td></tr></table><h3>Uses</h3><table><tr><th>Use</th><th>Example</th></tr><tr><td>Experience 
+(ever/never)</td><td>Have you ever eaten sushi?</td></tr><tr><td>Recent action with present result</td><td>I have lost 
+my keys. (I cannot find them now)</td></tr><tr><td>Action continuing to now</td><td>She has lived here for 5 
+years.</td></tr><tr><td>With just / already / yet</td><td>He has just arrived.</td></tr></table><h3>For vs 
+Since</h3><table><tr><th>For (duration)</th><th>Since (starting point)</th></tr><tr><td>for 2 hours, for a 
+week</td><td>since 9am, since 2020</td></tr></table><h3>Signal Words</h3><p>ever ?? never ?? already ?? yet ?? just ?? 
+recently ?? for ?? since</p>	intermediate	9	1	2026-05-28 14:24:11	2026-05-28 14:24:11	NULL
+2	Articles: A, An, The	<h2>Articles: A, An, The</h2><p>Articles indicate whether a noun is <strong>specific</strong> 
+or <strong>general</strong>.</p><h3>Indefinite Articles: A / 
+An</h3><table><tr><th>Article</th><th>Use</th><th>Example</th></tr><tr><td>a</td><td>Before consonant sounds</td><td>a 
+book, a university</td></tr><tr><td>an</td><td>Before vowel sounds</td><td>an apple, an hour</td></tr></table><p>Based 
+on <em>sound</em>, not letter: <code>a university</code> (/j/ sound), <code>an hour</code> (silent h).</p><h3>Definite 
+Article: The</h3><table><tr><th>Use</th><th>Example</th></tr><tr><td>Specific / already mentioned</td><td>I saw a dog. 
+The dog was big.</td></tr><tr><td>Unique things</td><td>The sun, the moon</td></tr><tr><td>Superlatives</td><td>The 
+best, the tallest</td></tr><tr><td>Oceans, rivers, mountain ranges</td><td>The Pacific, the 
+Nile</td></tr></table><h3>No Article (Zero Article)</h3><table><tr><th>Use</th><th>Example</th></tr><tr><td>General 
+plural/uncountable nouns</td><td>Dogs are loyal. Water is essential.</td></tr><tr><td>Names of countries, cities, 
+people</td><td>Vietnam, Hanoi, Tom</td></tr><tr><td>Languages, sports, meals</td><td>I speak English. We play 
+football.</td></tr></table>	beginner	10	1	2026-05-28 14:24:11	2026-05-28 14:24:11	NULL
+3	Reported Speech	<h2>Reported Speech (Indirect Speech)</h2><p>Tell what someone said <strong>without quoting exact 
+words</strong>.</p><h3>Tense Backshift</h3><table><tr><th>Direct Speech</th><th>Reported 
+Speech</th></tr><tr><td>Present Simple</td><td>??? Past Simple</td></tr><tr><td>Present Continuous</td><td>??? Past 
+Continuous</td></tr><tr><td>Past Simple</td><td>??? Past Perfect</td></tr><tr><td>will</td><td>??? 
+would</td></tr><tr><td>can</td><td>??? could</td></tr></table><blockquote>Direct: "I am tired." ??? She said she 
+<strong>was</strong> tired.<br>Direct: "I will come." ??? He said he <strong>would</strong> come.</blockquote><h3>Say 
+vs Tell</h3><table><tr><th>Verb</th><th>Pattern</th><th>Example</th></tr><tr><td>say</td><td>say + (that)</td><td>She 
+<strong>said (that)</strong> she was tired.</td></tr><tr><td>tell</td><td>tell + person + (that)</td><td>She 
+<strong>told me</strong> she was tired.</td></tr></table><h3>Reporting Questions</h3><blockquote>Direct: "Where do you 
+live?" ??? He asked where I <strong>lived</strong>.<br>Direct: "Do you like tea?" ??? She asked <strong>if</strong> I 
+liked tea.</blockquote>	advanced	11	1	2026-05-28 14:24:11	2026-05-28 14:24:11	NULL
+4	Comparatives & Superlatives	<h2>Comparatives & Superlatives</h2><p>Comparatives compare <strong>two things</strong>. 
+Superlatives describe the <strong>extreme</strong> in a group.</p><h3>Forming Comparatives</h3><table><tr><th>Adjective
+</th><th>Comparative</th><th>Rule</th></tr><tr><td>tall</td><td>taller</td><td>1 syllable ??? + 
+er</td></tr><tr><td>big</td><td>bigger</td><td>CVC ??? double + 
+er</td></tr><tr><td>happy</td><td>happier</td><td>Consonant + y ??? ier</td></tr><tr><td>beautiful</td><td>more 
+beautiful</td><td>3+ syllables ??? more + adj</td></tr><tr><td>good</td><td>better</td><td>Irregular</td></tr><tr><td>b
+ad</td><td>worse</td><td>Irregular</td></tr></table><h3>Forming 
+Superlatives</h3><table><tr><th>Adjective</th><th>Superlative</th></tr><tr><td>tall</td><td>the 
+tallest</td></tr><tr><td>big</td><td>the biggest</td></tr><tr><td>happy</td><td>the 
+happiest</td></tr><tr><td>beautiful</td><td>the most beautiful</td></tr><tr><td>good</td><td>the 
+best</td></tr><tr><td>bad</td><td>the worst</td></tr></table><h3>Patterns</h3><blockquote>A is <strong>taller 
+than</strong> B. &nbsp; A is <strong>the tallest</strong> in the group. &nbsp; A is <strong>as tall as</strong> 
+B.</blockquote>	intermediate	12	1	2026-05-28 14:24:11	2026-05-28 14:24:11	NULL
+5	C?u ?i?u Ki?n Lo?i 1 (First Conditional)	<h2>First Conditional</h2><p>Expresses <strong>real and possible</strong> 
+situations in the present or future.</p><h3>Structure</h3><table><tr><th>If Clause</th><th>Main 
+Clause</th></tr><tr><td>If + Present Simple</td><td>will + base verb</td></tr></table><blockquote>If it rains, I will 
+stay at home.<br>If you study hard, you will pass the exam.</blockquote><h3>Important Notes</h3><ul><li>The if-clause 
+can come first or second.</li><li>Do NOT use will in the if-clause.</li><li>Other modals: can, might, should in the 
+main clause.</li></ul><h3>Other Modals in Main 
+Clause</h3><table><tr><th>Modal</th><th>Example</th></tr><tr><td>can</td><td>If you come early, you 
+<strong>can</strong> help us.</td></tr><tr><td>might</td><td>If she calls, I <strong>might</strong> 
+answer.</td></tr><tr><td>should</td><td>If he is late, we <strong>should</strong> start without him.</td></tr></table>	
+intermediate	5	1	2026-05-03 20:09:53	2026-05-15 13:28:09	NULL
+6	C?u ?i?u Ki?n Lo?i 2 (Second Conditional)	<h2>Second Conditional</h2><p>Expresses <strong>hypothetical, unlikely, or 
+imaginary</strong> situations in the present or future.</p><h3>Structure</h3><table><tr><th>If Clause</th><th>Main 
+Clause</th></tr><tr><td>If + Past Simple</td><td>would + base verb</td></tr></table><blockquote>If I had more money, I 
+would travel the world.<br>If she were taller, she would be a model.</blockquote><h3>Important Notes</h3><ul><li>Use 
+<code>were</code> (not was) with all subjects in formal writing.</li><li>The situation is NOT real ??? imaginary or 
+very unlikely.</li></ul><h3>First vs Second Conditional</h3><table><tr><th>First (possible)</th><th>Second 
+(hypothetical)</th></tr><tr><td>If I have time, I will come.</td><td>If I had time, I would come.</td></tr></table>	
+intermediate	6	1	2026-05-03 20:09:53	2026-05-15 13:28:09	NULL
+7	C?u B? ??ng (Passive Voice)	<h2>Passive Voice</h2><p>Use the Passive when the <strong>action</strong> is more 
+important than who performs it, or when the doer is unknown.</p><h3>Structure: <code>be + past 
+participle</code></h3><table><tr><th>Tense</th><th>Active</th><th>Passive</th></tr><tr><td>Present Simple</td><td>She 
+cleans the room.</td><td>The room <strong>is cleaned</strong>.</td></tr><tr><td>Past Simple</td><td>They built this 
+bridge.</td><td>This bridge <strong>was built</strong>.</td></tr><tr><td>Present Perfect</td><td>He has written the 
+report.</td><td>The report <strong>has been written</strong>.</td></tr><tr><td>Future (will)</td><td>They will finish 
+the project.</td><td>The project <strong>will be finished</strong>.</td></tr><tr><td>Modal</td><td>You must sign the 
+form.</td><td>The form <strong>must be signed</strong>.</td></tr></table><h3>How to Transform Active to 
+Passive</h3><ol><li>Object of active ??? subject of passive.</li><li>Correct form of <code>be</code> for the 
+tense.</li><li>Main verb ??? past participle.</li><li>Add <code>by + agent</code> if 
+needed.</li></ol><blockquote>Active: Tom wrote the letter.<br>Passive: The letter was written by Tom.</blockquote>	
+intermediate	7	1	2026-05-03 20:09:53	2026-05-15 13:28:09	NULL
+8	M?nh ?? Quan H? (Relative Clauses)	<h2>Relative Clauses</h2><p>A <strong>relative clause</strong> gives more 
+information about a noun using a <em>relative pronoun</em>.</p><h3>Relative 
+Pronouns</h3><table><tr><th>Pronoun</th><th>Refers to</th><th>Example</th></tr><tr><td>who</td><td>people</td><td>The 
+man <strong>who called</strong> is my uncle.</td></tr><tr><td>which</td><td>things/animals</td><td>The book 
+<strong>which I bought</strong> is great.</td></tr><tr><td>that</td><td>people or things</td><td>The car <strong>that 
+she drives</strong> is red.</td></tr><tr><td>whose</td><td>possession</td><td>The student <strong>whose phone</strong> 
+rang left.</td></tr><tr><td>where</td><td>places</td><td>The city <strong>where I was born</strong> is 
+Hanoi.</td></tr><tr><td>when</td><td>time</td><td>I remember the day <strong>when we 
+met</strong>.</td></tr></table><h3>Defining vs 
+Non-defining</h3><table><tr><th>Type</th><th>Commas?</th><th>Example</th></tr><tr><td>Defining (essential)</td><td>No 
+commas</td><td>The woman <strong>who lives next door</strong> is friendly.</td></tr><tr><td>Non-defining (extra 
+info)</td><td>With commas</td><td>My sister, <strong>who lives in Paris</strong>, is 
+visiting.</td></tr></table><p><code>that</code> ??? defining clauses only. <code>which</code> ??? both types.</p>	
+advanced	8	1	2026-05-03 20:09:53	2026-05-15 13:28:09	NULL
+13	Present Perfect Tense	<h2>Present Perfect Tense</h2><p>Connects the <strong>past with the 
+present</strong>.</p><h3>Structure: <code>have / has + past 
+participle</code></h3><table><tr><th>Subject</th><th>Form</th><th>Example</th></tr><tr><td>I / You / We / 
+They</td><td>have + p.p.</td><td>I <strong>have visited</strong> Paris.</td></tr><tr><td>He / She / It</td><td>has + 
+p.p.</td><td>She <strong>has finished</strong> her 
+work.</td></tr></table><h3>Uses</h3><table><tr><th>Use</th><th>Example</th></tr><tr><td>Experience 
+(ever/never)</td><td>Have you ever eaten sushi?</td></tr><tr><td>Recent action with present result</td><td>I have lost 
+my keys. (I cannot find them now)</td></tr><tr><td>Action continuing to now</td><td>She has lived here for 5 
+years.</td></tr><tr><td>With just / already / yet</td><td>He has just arrived.</td></tr></table><h3>For vs 
+Since</h3><table><tr><th>For (duration)</th><th>Since (starting point)</th></tr><tr><td>for 2 hours, for a 
+week</td><td>since 9am, since 2020</td></tr></table><h3>Signal Words</h3><p>ever ?? never ?? already ?? yet ?? just ?? 
+recently ?? for ?? since</p>	intermediate	9	1	2026-05-15 13:28:09	2026-05-15 13:28:09	NULL
+14	Articles: A, An, The	<h2>Articles: A, An, The</h2><p>Articles indicate whether a noun is <strong>specific</strong> 
+or <strong>general</strong>.</p><h3>Indefinite Articles: A / 
+An</h3><table><tr><th>Article</th><th>Use</th><th>Example</th></tr><tr><td>a</td><td>Before consonant sounds</td><td>a 
+book, a university</td></tr><tr><td>an</td><td>Before vowel sounds</td><td>an apple, an hour</td></tr></table><p>Based 
+on <em>sound</em>, not letter: <code>a university</code> (/j/ sound), <code>an hour</code> (silent h).</p><h3>Definite 
+Article: The</h3><table><tr><th>Use</th><th>Example</th></tr><tr><td>Specific / already mentioned</td><td>I saw a dog. 
+The dog was big.</td></tr><tr><td>Unique things</td><td>The sun, the moon</td></tr><tr><td>Superlatives</td><td>The 
+best, the tallest</td></tr><tr><td>Oceans, rivers, mountain ranges</td><td>The Pacific, the 
+Nile</td></tr></table><h3>No Article (Zero Article)</h3><table><tr><th>Use</th><th>Example</th></tr><tr><td>General 
+plural/uncountable nouns</td><td>Dogs are loyal. Water is essential.</td></tr><tr><td>Names of countries, cities, 
+people</td><td>Vietnam, Hanoi, Tom</td></tr><tr><td>Languages, sports, meals</td><td>I speak English. We play 
+football.</td></tr></table>	beginner	10	1	2026-05-15 13:28:09	2026-05-15 13:28:09	NULL
+15	Reported Speech	<h2>Reported Speech (Indirect Speech)</h2><p>Tell what someone said <strong>without quoting exact 
+words</strong>.</p><h3>Tense Backshift</h3><table><tr><th>Direct Speech</th><th>Reported 
+Speech</th></tr><tr><td>Present Simple</td><td>??? Past Simple</td></tr><tr><td>Present Continuous</td><td>??? Past 
+Continuous</td></tr><tr><td>Past Simple</td><td>??? Past Perfect</td></tr><tr><td>will</td><td>??? 
+would</td></tr><tr><td>can</td><td>??? could</td></tr></table><blockquote>Direct: "I am tired." ??? She said she 
+<strong>was</strong> tired.<br>Direct: "I will come." ??? He said he <strong>would</strong> come.</blockquote><h3>Say 
+vs Tell</h3><table><tr><th>Verb</th><th>Pattern</th><th>Example</th></tr><tr><td>say</td><td>say + (that)</td><td>She 
+<strong>said (that)</strong> she was tired.</td></tr><tr><td>tell</td><td>tell + person + (that)</td><td>She 
+<strong>told me</strong> she was tired.</td></tr></table><h3>Reporting Questions</h3><blockquote>Direct: "Where do you 
+live?" ??? He asked where I <strong>lived</strong>.<br>Direct: "Do you like tea?" ??? She asked <strong>if</strong> I 
+liked tea.</blockquote>	advanced	11	1	2026-05-15 13:28:09	2026-05-15 13:28:09	NULL
+16	Comparatives & Superlatives	<h2>Comparatives & Superlatives</h2><p>Comparatives compare <strong>two 
+things</strong>. Superlatives describe the <strong>extreme</strong> in a group.</p><h3>Forming Comparatives</h3><table>
+<tr><th>Adjective</th><th>Comparative</th><th>Rule</th></tr><tr><td>tall</td><td>taller</td><td>1 syllable ??? + 
+er</td></tr><tr><td>big</td><td>bigger</td><td>CVC ??? double + 
+er</td></tr><tr><td>happy</td><td>happier</td><td>Consonant + y ??? ier</td></tr><tr><td>beautiful</td><td>more 
+beautiful</td><td>3+ syllables ??? more + adj</td></tr><tr><td>good</td><td>better</td><td>Irregular</td></tr><tr><td>b
+ad</td><td>worse</td><td>Irregular</td></tr></table><h3>Forming 
+Superlatives</h3><table><tr><th>Adjective</th><th>Superlative</th></tr><tr><td>tall</td><td>the 
+tallest</td></tr><tr><td>big</td><td>the biggest</td></tr><tr><td>happy</td><td>the 
+happiest</td></tr><tr><td>beautiful</td><td>the most beautiful</td></tr><tr><td>good</td><td>the 
+best</td></tr><tr><td>bad</td><td>the worst</td></tr></table><h3>Patterns</h3><blockquote>A is <strong>taller 
+than</strong> B. &nbsp; A is <strong>the tallest</strong> in the group. &nbsp; A is <strong>as tall as</strong> 
+B.</blockquote>	intermediate	12	1	2026-05-15 13:28:09	2026-05-15 13:28:09	NULL
+
+

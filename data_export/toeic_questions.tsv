@@ -1,0 +1,166 @@
+﻿
+id	test_id	group_id	part_num	question_num	question_text	image_url	audio_url	option_a	option_b	option_c	option_d	
+correct_answer	explanation	order_index
+303	1	NULL	5	101	The lecture will take place at 6:00 P.m., ------- which attendees may ask questions.	NULL	NULL	across	
+after	inside	among	B	Ch?n gi?i t? "after" (sau khi). "After which" ??ng vai tr? n?i m?nh ??: b?i gi?ng di?n ra l?c 6h 
+t?i, sau ?? ng??i tham gia c? th? ??t c?u h?i.	1
+304	1	NULL	5	102	The ------- antique shop in Pepper Valley will close down next month.	NULL	NULL	last	lasts	lasted	
+lasting	A	C?n m?t t?nh t?/t? x?c ??nh ?? b? ngh?a cho c?m danh t? "antique shop". "The last antique shop" ngh?a l? c?a 
+h?ng ?? c? cu?i c?ng.	2
+305	1	NULL	5	103	Merryville residents will receive an online status -----? about the ongoing bridge construction 
+project.	NULL	NULL	update	change	payment	request	A	D?a v?o ng? c?nh, ng??i d?n s? nh?n ???c m?t s? "status update" 
+(c?p nh?t tr?ng th?i) tr?c tuy?n v? d? ?n x?y d?ng c?u.	3
+306	1	NULL	5	104	As a result of ------- many years leading media organizations, Ms. Ayo was selected for the Dowel 
+Journalism Prize.	NULL	NULL	she	her	hers	herself	B	C?n t?nh t? s? h?u "her" ?? ??ng tr??c c?m danh t?/V-ing "many 
+years leading...".	4
+307	1	NULL	5	105	To stop the ------- of computer viruses, do not open suspicious e-mails.	NULL	NULL	break	spread	
+balance	surface	B	C?n danh t? ph? h?p ng? ngh?a: "stop the spread of computer viruses" (ng?n ch?n s? l?y lan c?a virus 
+m?y t?nh).	5
+308	1	NULL	5	106	The hiring manager ------- considered each applicant's r?sum? and qualifications.	NULL	NULL	caring	
+careful	carefully	carefulness	C	C?n m?t tr?ng t? (adv) "carefully" ?? b? ngh?a cho ??ng t? "considered".	6
+309	1	NULL	5	107	In October, Mr. Sakamoto will leave for New Zealand ------- will oversee the opening of the new 
+Auckland branch.	NULL	NULL	because	in addition	and	prior to	C	C?n m?t li?n t? n?i hai m?nh ?? c? c?ng ch? ng? (Mr. 
+Sakamoto): r?i ??n New Zealand "and" (v?) s? gi?m s?t vi?c khai tr??ng chi nh?nh.	7
+310	1	NULL	5	108	Tarateer Pharmaceuticals is varying its product ------- to include over-the-counter medications.	NULL	
+NULL	to line	lining	lined	line	D	C?m danh t? gh?p quen thu?c: "product line" (d?ng s?n ph?m).	8
+311	1	NULL	5	109	Dynart, Inc., continuously ------- new ways to reduce its use of plastics.	NULL	NULL	seeks	seeker	to 
+seek	seeking	A	Ch? ng? "Dynart, Inc." l? danh t? s? ?t, tr?ng t? "continuously", n?n c?n m?t ??ng t? ch?nh chia ? th? 
+hi?n t?i ??n s? ?t: "seeks".	9
+312	1	NULL	5	110	The cash registers at Pirkle Books automatically ------- the remaining inventory of books available.	
+NULL	NULL	calculate	calculator	calculating	calculation	A	Ch? ng? l? s? nhi?u "The cash registers", tr?ng t? 
+"automatically", c?n m?t ??ng t? ch?nh (V) nguy?n m?u: "calculate" (t?nh to?n).	10
+313	1	NULL	5	111	The product team is designing mapping software that can ------- locate underground minerals.	NULL	
+NULL	infinitely	sincerely	precisely	greatly	C	C?n tr?ng t? ph? h?p ngh?a: "precisely locate" (??nh v? m?t c?ch ch?nh 
+x?c) kho?ng s?n d??i l?ng ??t.	11
+314	1	NULL	5	112	According to CEO Mayu Yamada, it would not be ------- responsible to expand the warehouse at this 
+time.	NULL	NULL	finance	financials	financially	financing	C	C?n m?t tr?ng t? (adv) "financially" ?? b? ngh?a cho t?nh 
+t? "responsible" ??ng ph?a sau.	12
+315	1	NULL	5	113	Analysts cannot say with any ------- what the regional demand for electric trucks will be.	NULL	NULL	
+certainty	justice	excellence	denial	A	Sau c?m "with any" c?n m?t danh t?. C?m t? ph? h?p ngh?a l? "with any certainty" 
+(v?i b?t k? s? ch?c ch?n n?o).	13
+316	1	NULL	5	114	As part of its marketing campaign, Elegancia Dishware is ------- soliciting feedback from customers.	
+NULL	NULL	lightly	loyally	actively	cleanly	C	C?n tr?ng t? ph? h?p ngh?a: "actively soliciting feedback" (ch? ??ng k?u 
+g?i/thu th?p ph?n h?i).	14
+317	1	NULL	5	115	Rain gardens are intended to ------- water to prevent flooding of local roads.	NULL	NULL	engage	
+undergo	absorb	overwhelm	C	Ch?n ??ng t? ??ng ngh?a: v??n th?m n??c m?a ???c thi?t k? ?? "absorb water" (h?p th?/th?m 
+n??c) nh?m ng?n ng?p l?t.	15
+318	1	NULL	5	116	Theta Industries? training program aims to increase the ------- of its manufacturing systems.	NULL	
+NULL	producer	produced	productive	productivity	D	Sau m?o t? "the" v? tr??c gi?i t? "of" c?n m?t danh t? ??ng vai tr? 
+t?n ng?: "productivity" (n?ng su?t).	16
+319	1	NULL	5	117	The board of directors has voted to award Mr. Mitrakos a bonus for his role ------ obtaining the 
+international contract.	NULL	NULL	in	at	except	apart	A	?i v?i c?u tr?c c? ??nh: "one's role in doing something" (vai 
+tr? c?a ai ?? trong vi?c l?m g?).	17
+320	1	NULL	5	118	The finance director gave his approval ------- the project can move forward.	NULL	NULL	along	
+furthermore	cautiously	so that	D	C?n m?t li?n t? ch? m?c ??ch ?? n?i hai m?nh ??: Gi?m ??c t?i ch?nh ?? ph? duy?t "so 
+that" (?? m?) d? ?n c? th? ti?n tri?n.	18
+321	1	NULL	5	119	The newspaper article describes ways job seekers can ------- for having little workplace experience.	
+NULL	NULL	reply	capture	compensate	accumulate	C	?i v?i c?u tr?c "compensate for something" (b? ??p cho c?i g?). Ng??i 
+t?m vi?c c? th? b? ??p cho vi?c thi?u kinh nghi?m.	19
+322	1	NULL	5	120	Mr. Ellis and Ms. Barnes were both highly qualified, but ------- got the job.	NULL	NULL	myself	
+neither	anybody	whoever	B	Ng? c?nh c? 2 ng??i (Mr. Ellis & Ms. Barnes) nh?ng c? t? n?i t??ng ph?n "but" (nh?ng), suy 
+ra k?t qu? ph? ??nh: "neither got the job" (kh?ng ai trong hai ng??i nh?n ???c vi?c).	20
+323	1	NULL	5	121	Ennis Photography purchased all new lighting equipment ------- the high cost.	NULL	NULL	even though	
+however	until	despite	D	Ph?a sau ch? tr?ng l? m?t c?m danh t? "the high cost", do ?? c?n gi?i t? ch? s? nh??ng b?: 
+"despite" (m?c d?).	21
+324	1	NULL	5	122	Marburton residents who wish to ------- a home should contact the award-winning team at Kwan Real 
+Estate.	NULL	NULL	seller	sold	sell	selling	C	Sau c?u tr?c "wish to" c?n m?t ??ng t? nguy?n m?u (V-bare): "sell" (b?n 
+nh?).	22
+325	1	NULL	5	123	Maswa Bistro began a ------- agreement with local farmers to purchase a set amount of produce each 
+week.	NULL	NULL	disruptive	cooperative	grateful	concerned	B	C?n m?t t?nh t? h?p ngh?a ?? b? ngh?a cho "agreement": 
+"cooperative agreement" (th?a thu?n h?p t?c).	23
+326	1	NULL	5	124	The City of Doyle?s new downtown parking ------- have been met with opposition by residents and 
+visitors.	NULL	NULL	restricts	restricted	restrictions	restricting	C	??ng t? ch?nh ph?a sau chia s? nhi?u l? "have 
+been", suy ra v? tr? n?y c?n m?t danh t? s? nhi?u l?m ch? ng? ch?nh: "parking restrictions" (c?c quy ??nh h?n ch? ?? 
+xe).	24
+327	1	NULL	5	125	The plumbing position requires extensive training, even for those who studied ------- in technical 
+school.	NULL	NULL	diligently	scientifically	objectively	decidedly	A	C?n m?t tr?ng t? b? ngh?a cho ??ng t? "studied". 
+X?t v? ngh?a, "studied diligently" (h?c h?nh ch?m ch?) l? ph? h?p nh?t.	25
+328	1	NULL	5	126	With its fixed price -------, Omega Cellular guarantees no phone bill increases for three years.	NULL	
+NULL	assurance	assuredly	assuring	assures	A	C?n m?t danh t? ??ng sau c?m "fixed price" t?o th?nh m?t c?m danh t?: 
+"fixed price assurance" (s? ??m b?o gi? c? ??nh).	26
+329	1	NULL	5	127	As chief analytics officer, Mr. Ko has worked at Lochston Ltd. with great ------ for more than twenty 
+years.	NULL	NULL	deduction	duplication	declaration	dedication	D	Sau c?m "with great" c?n m?t danh t? th? hi?n t?nh 
+ch?t t?ch c?c trong c?ng vi?c: "dedication" (s? c?ng hi?n).	27
+330	1	NULL	5	128	Milltown Hospital's cafeteria serves lunch seven days a week ------- only on weekdays.	NULL	NULL	up 
+to	as though	each time	rather than	D	C?n c?m t? mang ngh?a lo?i tr?/so s?nh: ph?c v? b?a tr?a 7 ng?y m?t tu?n "rather 
+than" (thay v?) ch? v?o c?c ng?y trong tu?n.	28
+331	1	NULL	5	129	The store's entire inventory of lumber comes from a nearby ------- supplier.	NULL	NULL	financial	
+promotional	chemical	commercial	D	C?n t?nh t? h?p ng? c?nh ?? b? ngh?a cho "supplier": "commercial supplier" (nh? cung 
+c?p th??ng m?i).	29
+332	1	NULL	5	130	For a $95 ------- fee, our mechanics will determine what repairs are needed.	NULL	NULL	diagnosed	
+diagnostic	diagnosable	diagnose	B	C?n m?t t?nh t? ?i k?m t?o th?nh c?m t? chuy?n ng?nh: "diagnostic fee" (ph? ch?n 
+?o?n/ki?m tra l?i).	30
+365	1	9	6	131	131 The nursery here at Riessler Landscaping includes plants...	NULL	NULL	Staff members have written 
+articles for the local newspaper.	Installing lights can enhance the effect of a well-designed garden.	Local 
+competitors cannot beat the prices we charge.	Riessler Landscaping?s goal is to make your vision a reality.	D	C?u ph?a 
+tr??c n?i v? vi?c l?ng nghe ? t??ng v? ??a ra g?i ? ph? h?p v?i mong mu?n c?a kh?ch h?ng, n?n l?a ch?n D (M?c ti?u c?a 
+c?ng ty l? bi?n t?m nh?n c?a b?n th?nh hi?n th?c) l? h?p l? nh?t v? logic.	1
+366	1	9	6	132	You are guaranteed to find something that will add 132 to your garden.	NULL	NULL	years	space	beauty	
+moisture	C	D?a v?o ng? c?nh ph?a tr??c nh?c ??n "r?c r? v?i nh?ng m?u s?c b?t m?t quanh n?m" (burst with eye-catching 
+colors year-round), vi?c ch?n "beauty" (v? ??p) l? ph? h?p nh?t ?? b? ngh?a cho ??ng t? "add".	2
+367	1	9	6	133	We are 133 equipped to construct small ponds or other water features.	NULL	NULL	also	rarely	somehow	
+nevertheless	A	D?ng tr?ng t? "also" (c?ng) ?? b? sung th?m m?t d?ch v?/kh? n?ng kh?c c?a c?ng ty (x?y h? nh? ho?c c?c 
+t?nh n?ng n??c kh?c) b?n c?nh vi?c cung c?p c?y c?nh.	3
+368	1	9	6	134	With more than 40 years in the landscape?design business, 134 expertise is unmatched.	NULL	NULL	its	our	
+others	their	B	??i di?n cho c?ng ty ?ang t? gi?i thi?u ("We will listen...", "our name suggests"), do ?? ph?i d?ng 
+t?nh t? s? h?u "our" (chuy?n m?n c?a ch?ng t?i l? v? ??i).	4
+369	1	10	6	135	We are delighted to celebrate your 30th anniversary with Brandrix Distribution Centre. _135	NULL	NULL	
+We especially value our long-term customers.	Please join our holiday celebration.	Our annual report will be released 
+soon.	You have been a valuable member of our team.	D	Th? ch?c m?ng k? ni?m 30 n?m l?m vi?c c?a m?t nh?n vi?n, c?u D 
+(B?n ?? lu?n l? m?t th?nh vi?n gi? tr? trong ??i ng? c?a ch?ng t?i) ho?n to?n kh?p v?i m?ch v?n khen ng?i ph?a sau.	1
+370	1	10	6	136	Over the years, you _136 great initiative, creativity, and leadership.	NULL	NULL	will show	must show	
+have shown	are showing	C	D?u hi?u "Over the years" (Qua nhi?u n?m) ph?i h?p di?n t? h?nh ??ng k?o d?i t? qu? kh? ??n 
+hi?n t?i, c?n chia th? Hi?n t?i ho?n th?nh: "have shown".	2
+371	1	10	6	137	You will 137 be receiving a commemorative plaque by post.	NULL	NULL	then	soon	instead	likewise	B	Tr?ng 
+t? ch? th?i gian t??ng lai "soon" (s?m) ?i k?m c?u tr?c "will soon be receiving" ?? th?ng b?o s? vi?c s?p di?n ra 
+trong t??ng lai g?n.	3
+372	1	10	6	138	Congratulations on reaching this 138	NULL	NULL	milestone	consensus	destination	understanding	A	L? k? 
+ni?m 30 n?m l?m vi?c l? m?t "milestone" (c?t m?c) l?n trong s? nghi?p, d?ng danh t? n?y mang ? ngh?a ch?c m?ng c?c k? 
+ph? h?p.	4
+373	1	11	6	139	My design team is in the process of 139 the plans for your living room.	NULL	NULL	finalizing	finalize	
+finalized	finalizes	A	?i sau c?u tr?c gi?i t? "in the process of" b?t bu?c ph?i l? m?t danh ??ng t? (V-ing): 
+"finalizing" (?ang trong qu? tr?nh ho?n thi?n).	1
+374	1	11	6	140	Please review the attached file and decide whether you like those new 140	NULL	NULL	organizations	
+schedules	colors	times	C	C?u tr??c v?a nh?c t?i vi?c ch?n c?c lo?i s?n kh?c nhau cho t??ng v? vi?n ("different paints 
+for the walls and borders"), n?n c?u sau danh t? ph? h?p nh?t l? "colors" (nh?ng m?u s?c m?i ??).	2
+375	1	11	6	141	If not, it is not too late to make a change. 141 Your review will help us refine the design before we 
+start.	NULL	NULL	I have already begun drawing up plans for your kitchen.	We are not planning to begin work for another 
+two weeks.	Your living room is particularly spacious and airy.	We have not yet received your current payment.	B	?i?n 
+c?u B (Ch?ng t?i d? ki?n ch?a b?t ??u thi c?ng trong v?ng 2 tu?n t?i) ?? l?m r? l? do t?i sao "v?n ch?a qu? mu?n ?? 
+thay ??i" (it is not too late to make a change).	3
+376	1	11	6	142	Please let 142 know if you have any questions.	NULL	NULL	them	ours	his	me	D	Ng??i vi?t th? ? ng?i th? 
+nh?t s? ?t ("I have chosen...", "I look forward"), k?t th? d?ng c?m giao ti?p quen thu?c: "Please let me know" (Vui 
+l?ng cho t?i bi?t).	4
+377	1	12	6	143	We hope you found our services (143) -------	NULL	NULL	satisfied	satisfaction	satisfactory	
+satisfactorily	C	?p d?ng c?u tr?c: "find something + adj" (nh?n th?y c?i g? ?? nh? th? n?o). D?ng t?nh t? 
+"satisfactory" (v?a ?, th?a ??ng) ?? m? t? t?nh ch?t cho "our services".	1
+378	1	12	6	144	We have posted a (144) ------- of your consultation on our portal.	NULL	NULL	photo	lecture	summary	
+schedule	C	Sau khi ?i kh?m b?nh/t? v?n, ph?ng kh?m th??ng ??ng t?i m?t b?n "summary" (t?m t?t) n?i dung cu?c ki?m tra 
+l?n h? th?ng c?ng th?ng tin portal ?? b?nh nh?n d? d?ng xem l?i.	2
+379	1	12	6	145	(145) -------, you can make appointments and payments...	NULL	NULL	To repeat	For instance	Otherwise	
+Consequently	B	Ph?a sau ??a ra m?t lo?t h?nh ??ng c? th? (??t l?ch, thanh to?n, xem b?nh ?n...), ??y l? c?c v? d? minh 
+h?a cho c?m "various activities" ? c?u tr??c. Ch?n "For instance" (V? d? nh?).	3
+380	1	12	6	146	request medication refills. (146) -------. Rest assured that your personal information is safe and 
+secure.	NULL	NULL	We hope you will use this resource to manage your health-care needs.	The staff will close the office 
+early on Friday afternoons.	Please be sure to come to our office fifteen minutes in advance.	We apologize for any 
+confusion about your appointment time.	A	Ch?n c?u A (Ch?ng t?i hy v?ng b?n s? s? d?ng ngu?n t?i nguy?n n?y ?? qu?n l? 
+c?c nhu c?u ch?m s?c s?c kh?e c?a m?nh) ?? ??c k?t l?i l?i ?ch c?a c?ng th?ng tin portal v?a ???c li?t k? b?n tr?n.	4
+381	1	13	7	147	What is the purpose of the notice?	NULL	NULL	To invite residents to a meeting on May 3	To request 
+feedback about parking facilities	To inform residents of an upcoming project	To announce an increase in parking fees	C	
+Th?ng b?o n?i v? vi?c c?ng ty Riverside Paving Company s? ??n tr?i l?i b? m?t khu v?c ?? xe (resurface the parking 
+area), ??y l? m?t d? ?n s?p di?n ra n?n ch?n C.	1
+382	1	13	7	148	What is suggested about High View Apartments?	NULL	NULL	It charges residents a monthly maintenance fee.	
+It recently hired a new property manager.	It has the parking area repaved every year.	It assigns tenants specific 
+parking spots.	D	B?i ??c c? c?u: "You will receive an e-mail if your parking space is moved more than 20 meters from 
+your previous one" (B?n s? nh?n email n?u ch? ??u xe c?a b?n b? d?ch chuy?n...), ch?ng t? chung c? n?y c? ch? ??nh v? 
+tr? ?? xe c? th? cho t?ng c? d?n.	2
+383	1	14	7	149	What most likely is Ms. Seang's job?	NULL	NULL	Glassmaker	Art instructor	Beach lifeguard	Program 
+administrator	B	D?a v?o n?i dung ?o?n h?i tho?i trong ?nh, Carol nh?c t?i "bu?i h?i th?o mosaic (gh?p tranh) c?a c? 
+v?o ng?y mai", do ?? c? Seang kh? n?ng cao nh?t l? m?t gi?o vi?n d?y ngh? thu?t (Art instructor).	4
+384	1	14	7	150	At 11:23 A.M., what does Ms. Seang imply when she writes, "I have plenty to go around"?	NULL	NULL	She 
+intends to create an extra-large mosaic.	She has been collecting sea glass for many years.	She can share her sea glass 
+with all the workshop participants.	She does not think she will use much of her sea glass.	C	C?m t? "plenty to go 
+around" trong ?nh ngh?a l? c? ?? cho t?t c? m?i ng??i, ?m ch? c? c? th? chia s? s? th?y tinh bi?n n?y cho to?n b? h?c 
+vi?n tham gia bu?i h?i th?o.	2
+
+

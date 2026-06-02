@@ -122,22 +122,22 @@ export default function GrammarListPage() {
 
         .gl-card-level { display:inline-flex; align-items:center; gap:5px;
           padding:3px 10px; border-radius:12px;
-          font-family:'Be Vietnam Pro',sans-serif; font-size:.65rem; font-weight:600;
-          letter-spacing:.04em; border:1px solid;
+          font-family:'Be Vietnam Pro',sans-serif; font-size:.72rem; font-weight:600;
+          letter-spacing:.02em; border:1px solid;
           margin-bottom:10px; align-self:flex-start; transition:box-shadow .3s; }
         .gl-card:hover .gl-card-level { box-shadow:0 0 10px var(--lb); }
 
-        .gl-card-num { font-family:'Be Vietnam Pro',sans-serif; font-size:.62rem; font-weight:600;
-          letter-spacing:.06em; color:var(--gold-dim); margin-bottom:4px; }
-        .gl-card-title { font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:600;
-          color:var(--gold-lt); letter-spacing:.02em; line-height:1.3;
+        .gl-card-num { font-family:'Be Vietnam Pro',sans-serif; font-size:.72rem; font-weight:600;
+          letter-spacing:.04em; color:var(--gold-dim); margin-bottom:4px; }
+        .gl-card-title { font-family:'Be Vietnam Pro',sans-serif; font-size:1rem; font-weight:700;
+          color:var(--gold-lt); letter-spacing:.01em; line-height:1.35;
           margin-bottom:8px; transition:color .3s; flex:1; }
         .gl-card:hover .gl-card-title { color:var(--gold-bright); }
 
         .gl-card-footer { display:flex; align-items:center; justify-content:space-between;
           padding:10px 18px 14px; border-top:1px solid rgba(200,169,110,.07); }
-        .gl-card-cta { font-family:'Be Vietnam Pro',sans-serif; font-size:.62rem; font-weight:600;
-          letter-spacing:.06em; text-transform:uppercase; color:var(--gold-dim); }
+        .gl-card-cta { font-family:'Be Vietnam Pro',sans-serif; font-size:.72rem; font-weight:600;
+          letter-spacing:.04em; text-transform:uppercase; color:var(--gold-dim); }
         .gl-card-arrow { font-size:13px; color:var(--gold-dim); opacity:0;
           transform:translateX(-5px); transition:all .3s; }
         .gl-card:hover .gl-card-arrow { opacity:1; transform:translateX(0); }

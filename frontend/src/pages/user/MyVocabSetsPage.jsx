@@ -134,22 +134,22 @@ function SetStudy({ set, onBack }) {
 
       {/* Card */}
       <div onClick={() => setFlipped(f => !f)} style={{
-        minHeight: 220, borderRadius: 16, border: '1.5px solid #e0e0e0',
-        boxShadow: '0 4px 20px rgba(0,0,0,.08)', background: '#fff',
+        minHeight: 220, borderRadius: 16, border: '1.5px solid var(--app-border)',
+        boxShadow: '0 4px 20px rgba(0,0,0,.08)', background: 'var(--app-surface)',
         cursor: 'pointer', position: 'relative', userSelect: 'none',
       }}>
-        <span style={{ position: 'absolute', bottom: 14, right: 16, fontSize: 20, color: '#aaa' }}>⟳</span>
+        <span style={{ position: 'absolute', bottom: 14, right: 16, fontSize: 20, color: 'var(--app-text-3)' }}>⟳</span>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: 220, padding: '24px 32px' }}>
           {!flipped ? (
             <>
-              <h3 style={{ fontWeight: 800, color: '#1a1a2e' }}>{current?.word}</h3>
-              {current?.phonetic && <p style={{ color: '#6c8ebf' }}>/{current.phonetic}/</p>}
+              <h3 style={{ fontWeight: 800, color: 'var(--app-text)' }}>{current?.word}</h3>
+              {current?.phonetic && <p style={{ color: 'var(--rar-rare-c)' }}>/{current.phonetic}/</p>}
               <small className="text-muted">👆 Nhấn để xem nghĩa</small>
             </>
           ) : (
             <>
-              <p style={{ fontSize: '1.1rem', fontWeight: 600, color: '#198754', textAlign: 'center' }}>{current?.meaning}</p>
-              {current?.example && <p style={{ color: '#888', fontStyle: 'italic', fontSize: '.9rem', textAlign: 'center' }}>"{current.example}"</p>}
+              <p style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--correct-text)', textAlign: 'center' }}>{current?.meaning}</p>
+              {current?.example && <p style={{ color: 'var(--app-text-3)', fontStyle: 'italic', fontSize: '.9rem', textAlign: 'center' }}>"{current.example}"</p>}
             </>
           )}
         </div>

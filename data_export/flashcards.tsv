@@ -1,0 +1,200 @@
+﻿
+id	topic_id	word	phonetic	meaning	example	audio_url	image_url	created_at	updated_at	word_type	notes
+1	1	greet	/?ri?t/	ch?o h?i	She always greets her colleagues with a smile.	NULL	NULL	2026-05-03 20:09:53	2026-05-03 
+20:09:53	NULL	NULL
+2	1	apologize	/??p?l?d?a?z/	xin l?i	I apologize for being late to the meeting.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+3	1	introduce	/??ntr??dju?s/	gi?i thi?u	Let me introduce myself. My name is John.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+4	1	appreciate	/??pri??ie?t/	tr?n tr?ng, ??nh gi? cao	I appreciate your help with this project.	NULL	NULL	2026-05-03 
+20:09:53	2026-05-03 20:09:53	NULL	NULL
+5	1	grateful	/??re?tf?l/	bi?t ?n	I am grateful for everything you have done.	NULL	NULL	2026-05-03 20:09:53	2026-05-03 
+20:09:53	NULL	NULL
+6	1	polite	/p??la?t/	l?ch s?	It is important to be polite in conversations.	NULL	NULL	2026-05-03 20:09:53	2026-05-03 
+20:09:53	NULL	NULL
+7	1	schedule	/??edju?l/	l?ch tr?nh, s?p x?p	Can we schedule a meeting for tomorrow?	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+8	1	confirm	/k?n?f??m/	x?c nh?n	Please confirm your attendance by Friday.	NULL	NULL	2026-05-03 20:09:53	2026-05-03 
+20:09:53	NULL	NULL
+9	1	postpone	/p??st?p??n/	ho?n l?i	We had to postpone the event due to rain.	NULL	NULL	2026-05-03 20:09:53	2026-05-03 
+20:09:53	NULL	NULL
+10	1	cancel	/?k?ns?l/	h?y b?	The flight was cancelled because of the storm.	NULL	NULL	2026-05-03 20:09:53	2026-05-03 
+20:09:53	NULL	NULL
+11	2	agenda	/??d?end?/	ch??ng tr?nh ngh? s?	The agenda for today's meeting includes budget review.	NULL	NULL	
+2026-05-03 20:09:53	2026-05-03 20:09:53	NULL	NULL
+12	2	deadline	/?dedla?n/	th?i h?n ch?t	The deadline for the project is next Monday.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+13	2	negotiate	/n??????ie?t/	??m ph?n	We need to negotiate the terms of the contract.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+14	2	colleague	/?k?li??/	??ng nghi?p	My colleague helped me finish the report.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+15	2	promotion	/pr??m????n/	th?ng ch?c, khuy?n m?i	She received a promotion after her hard work.	NULL	NULL	2026-05-03 
+20:09:53	2026-05-03 20:09:53	NULL	NULL
+16	2	presentation	/?prez?n?te???n/	b?i thuy?t tr?nh	His presentation impressed all the investors.	NULL	NULL	2026-05-03 
+20:09:53	2026-05-03 20:09:53	NULL	NULL
+17	2	budget	/?b?d??t/	ng?n s?ch	We need to stay within the budget this quarter.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+18	2	revenue	/?rev?nju?/	doanh thu	The company's revenue increased by 20% this year.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+19	2	contract	/?k?ntr?kt/	h?p ??ng	Both parties signed the contract yesterday.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+20	2	proposal	/pr??p??z?l/	?? xu?t	She submitted a proposal for the new project.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+21	3	itinerary	/a??t?n?r?ri/	l?ch tr?nh du l?ch	The travel agency prepared a detailed itinerary.	NULL	NULL	2026-05-03 
+20:09:53	2026-05-03 20:09:53	NULL	NULL
+22	3	reservation	/?rez??ve???n/	??t ch? tr??c	I made a reservation at the hotel for two nights.	NULL	NULL	2026-05-03 
+20:09:53	2026-05-03 20:09:53	NULL	NULL
+23	3	departure	/d??p??t??/	kh?i h?nh	The departure time is 6:00 AM tomorrow.	NULL	NULL	2026-05-03 20:09:53	2026-05-03 
+20:09:53	NULL	NULL
+24	3	destination	/?dest??ne???n/	?i?m ??n	Paris is a popular tourist destination.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+25	3	accommodation	/??k?m??de???n/	ch? ?	The accommodation was comfortable and affordable.	NULL	NULL	2026-05-03 
+20:09:53	2026-05-03 20:09:53	NULL	NULL
+26	3	customs	/?k?st?mz/	h?i quan	You must declare all goods at customs.	NULL	NULL	2026-05-03 20:09:53	2026-05-03 
+20:09:53	NULL	NULL
+27	3	baggage	/?b???d?/	h?nh l?	Please collect your baggage at carousel 3.	NULL	NULL	2026-05-03 20:09:53	2026-05-03 
+20:09:53	NULL	NULL
+28	3	transit	/?tr?ns?t/	qu? c?nh	We have a 2-hour transit in Singapore.	NULL	NULL	2026-05-03 20:09:53	2026-05-03 
+20:09:53	NULL	NULL
+29	3	boarding	/?b??d??/	l?n t?u/m?y bay	Boarding will begin 30 minutes before departure.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+30	3	passport	/?p??sp??t/	h? chi?u	Don't forget to bring your passport.	NULL	NULL	2026-05-03 20:09:53	2026-05-03 
+20:09:53	NULL	NULL
+31	4	sustainability	/s??ste?n??b?l?ti/	t?nh b?n v?ng	Sustainability is key to protecting our planet.	NULL	NULL	
+2026-05-03 20:09:53	2026-05-03 20:09:53	NULL	NULL
+32	4	deforestation	/?di??f?r??ste???n/	n?n ph? r?ng	Deforestation is a major cause of climate change.	NULL	NULL	
+2026-05-03 20:09:53	2026-05-03 20:09:53	NULL	NULL
+33	4	biodiversity	/?ba???da??v??s?ti/	?a d?ng sinh h?c	We must protect biodiversity in rainforests.	NULL	NULL	
+2026-05-03 20:09:53	2026-05-03 20:09:53	NULL	NULL
+34	4	emission	/??m???n/	kh? th?i	Carbon emissions must be reduced significantly.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+35	4	renewable	/r??nju??b?l/	c? th? t?i t?o	Solar energy is a renewable energy source.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+36	4	ecosystem	/?i?k???s?st?m/	h? sinh th?i	Human activity is damaging the ocean ecosystem.	NULL	NULL	2026-05-03 
+20:09:53	2026-05-03 20:09:53	NULL	NULL
+37	4	pollution	/p??lu???n/	? nhi?m	Air pollution is a serious problem in big cities.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+38	4	conservation	/?k?ns??ve???n/	b?o t?n	Conservation efforts have saved many species.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+39	4	drought	/dra?t/	h?n h?n	The drought caused severe food shortages.	NULL	NULL	2026-05-03 20:09:53	2026-05-03 
+20:09:53	NULL	NULL
+40	4	greenhouse	/??ri?nha?s/	nh? k?nh	Greenhouse gases trap heat in the atmosphere.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+41	5	artificial intelligence	/???t?f???l ?n?tel?d??ns/	tr? tu? nh?n t?o	AI is transforming many industries.	NULL	NULL	
+2026-05-03 20:09:53	2026-05-03 20:09:53	NULL	NULL
+42	5	algorithm	/??l??r???m/	thu?t to?n	The search engine uses a complex algorithm.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+43	5	automation	/???t??me???n/	t? ??ng h?a	Automation is replacing many manual jobs.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+44	5	cybersecurity	/?sa?b?s??kj??r?ti/	an ninh m?ng	Cybersecurity is critical for businesses today.	NULL	NULL	
+2026-05-03 20:09:53	2026-05-03 20:09:53	NULL	NULL
+45	5	innovation	/??n??ve???n/	s? ??i m?i	Innovation drives economic growth.	NULL	NULL	2026-05-03 20:09:53	2026-05-03 
+20:09:53	NULL	NULL
+46	5	virtual	/?v??t?u?l/	?o, tr?c tuy?n	Virtual reality is used in gaming and education.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+47	5	database	/?de?t?be?s/	c? s? d? li?u	The database stores millions of user records.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+48	5	bandwidth	/?b?ndw?d?/	b?ng th?ng	You need high bandwidth for video streaming.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+49	5	encryption	/?n?kr?p??n/	m? h?a	Encryption protects sensitive data online.	NULL	NULL	2026-05-03 20:09:53	
+2026-05-03 20:09:53	NULL	NULL
+50	5	cloud computing	/kla?d k?m?pju?t??/	?i?n to?n ??m m?y	Cloud computing allows remote data storage.	NULL	NULL	
+2026-05-03 20:09:53	2026-05-03 20:09:53	NULL	NULL
+51	6	hypothesis	/ha??p???s?s/	gi? thuy?t	The hypothesis was supported by the results.	NULL	NULL	2026-05-15 22:55:55	
+2026-05-15 22:55:55	noun	Research
+52	6	variable	/?ve?ri?bl/	bi?n s?	Control all variables in the experiment.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 
+22:55:55	noun	Science
+53	6	analysis	/??n?l?s?s/	ph?n t?ch	The analysis showed clear trends.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 
+22:55:55	noun	Academic
+54	6	experiment	/?k?sper?m?nt/	th? nghi?m	The experiment lasted two weeks.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 
+22:55:55	noun	Lab
+55	6	evidence	/?ev?d?ns/	b?ng ch?ng	Evidence supports the theory.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	
+noun	Research
+56	6	theory	/????ri/	h?c thuy?t	The theory explains the phenomenon.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	
+noun	Science
+57	6	methodology	/?me???d?l?d?i/	ph??ng ph?p nghi?n c?u	Describe your methodology.	NULL	NULL	2026-05-15 22:55:55	
+2026-05-15 22:55:55	noun	Academic
+58	6	phenomenon	/f??n?m?n?n/	hi?n t??ng	This phenomenon is rare.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	
+noun	Science
+59	6	data	/?de?t?/	d? li?u	Data were collected online.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	noun	
+Statistics
+60	6	derive	/d??ra?v/	suy ra	Researchers derive conclusions.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	verb	
+Academic
+61	6	evaluate	/??v?ljue?t/	??nh gi?	We evaluate the outcomes.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	verb	
+Research
+62	6	significant	/s???n?f?k?nt/	??ng k?	There was significant growth.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 
+22:55:55	adj	Academic
+63	6	quantitative	/?kw?nt?t?t?v/	??nh l??ng	Quantitative methods use numbers.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 
+22:55:55	adj	Research
+64	6	qualitative	/?kw?l?t?t?v/	??nh t?nh	Qualitative analysis studies meaning.	NULL	NULL	2026-05-15 22:55:55	
+2026-05-15 22:55:55	adj	Research
+65	6	innovation	/??n??ve???n/	??i m?i	Innovation advances technology.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 
+22:55:55	noun	Science
+66	6	correlation	/?k?r??le???n/	m?i t??ng quan	Correlation does not imply causation.	NULL	NULL	2026-05-15 22:55:55	
+2026-05-15 22:55:55	noun	Statistics
+67	6	causation	/k???ze???n/	quan h? nh?n qu?	Causation requires evidence.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 
+22:55:55	noun	Statistics
+68	6	simulate	/?s?mj?le?t/	m? ph?ng	The software simulates weather.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	
+verb	Tech
+69	6	algorithm	/??l??r???m/	thu?t to?n	Algorithms process data.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	noun	
+Computer science
+70	6	compute	/k?m?pju?t/	t?nh to?n	Computers compute rapidly.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	verb	
+Tech
+71	6	synthesis	/?s?n??s?s/	t?ng h?p	The paper offers a synthesis.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	
+noun	Academic
+72	6	framework	/?fre?mw??k/	khung l? thuy?t	Use a suitable framework.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 
+22:55:55	noun	Research
+73	6	dimension	/da??men??n/	kh?a c?nh	The issue has many dimensions.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	
+noun	Academic
+74	6	observe	/?b?z??v/	quan s?t	Scientists observe changes.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	verb	
+Science
+75	6	predict	/pr??d?kt/	d? ?o?n	Models predict outcomes.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	verb	Science
+76	6	estimate	/?est?me?t/	??c t?nh	Estimate the population.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	verb	
+Statistics
+77	6	accuracy	/??kj?r?si/	?? ch?nh x?c	Accuracy is important.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	noun	
+Science
+78	6	precision	/pr??s???n/	?? ch?nh x?c cao	Precision reduces errors.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 
+22:55:55	noun	Lab
+79	6	sample	/?s??mpl/	m?u	The sample included 200 people.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	noun	
+Research
+80	6	survey	/?s??ve?/	kh?o s?t	The survey was anonymous.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	noun	
+Research
+81	6	conclusion	/k?n?klu???n/	k?t lu?n	Draw a conclusion.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	noun	
+Academic
+82	6	journal	/?d???nl/	t?p ch? h?c thu?t	The article was published in a journal.	NULL	NULL	2026-05-15 22:55:55	
+2026-05-15 22:55:55	noun	Academic
+83	6	citation	/sa??te???n/	tr?ch d?n	Include proper citations.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	noun	
+Academic
+84	6	peer review	/p?? r??vju?/	ph?n bi?n ??ng c?p	The study passed peer review.	NULL	NULL	2026-05-15 22:55:55	
+2026-05-15 22:55:55	noun	Research
+85	6	abstract	/??bstr?kt/	t?m t?t nghi?n c?u	Read the abstract first.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 
+22:55:55	noun	Academic
+86	6	objective	/?b?d?ekt?v/	m?c ti?u	State your objective.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	noun	
+Research
+87	6	subjective	/s?b?d?ekt?v/	ch? quan	Subjective views vary.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	adj	
+Academic
+88	6	concept	/?k?nsept/	kh?i ni?m	Understand the concept.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	noun	
+Learning
+89	6	criterion	/kra??t??ri?n/	ti?u ch?	Meet all criteria.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	noun	
+Research
+90	6	interpret	/?n?t??pr?t/	di?n gi?i	Interpret the results.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	verb	
+Academic
+91	6	inference	/??nf?r?ns/	suy lu?n	Avoid false inferences.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	noun	
+Logic
+92	6	bias	/?ba??s/	thi?n v?	Bias affects outcomes.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	noun	Research
+93	6	validity	/v??l?d?ti/	t?nh h?p l?	Test validity matters.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	noun	
+Research
+94	6	reliability	/r??la???b?l?ti/	?? tin c?y	Reliability ensures consistency.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 
+22:55:55	noun	Research
+95	6	sequence	/?si?kw?ns/	chu?i	Analyze DNA sequences.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	noun	Science
+96	6	genetics	/d???net?ks/	di truy?n h?c	Genetics studies inheritance.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 
+22:55:55	noun	Biology
+97	6	ecosystem	/?i?k??s?st?m/	h? sinh th?i	Protect the ecosystem.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	
+noun	Biology
+98	6	molecule	/?m?l?kju?l/	ph?n t?	Water is a molecule.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	noun	
+Chemistry
+99	6	atom	/??t?m/	nguy?n t?	Atoms form matter.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	noun	Chemistry
+100	6	astronomy	/??str?n?mi/	thi?n v?n h?c	Astronomy explores space.	NULL	NULL	2026-05-15 22:55:55	2026-05-15 22:55:55	
+noun	Science
+
+

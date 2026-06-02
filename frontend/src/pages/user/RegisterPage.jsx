@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import api from '../../api/axios';
 import {
   PARTICLES, RUNES, TEYVAT_NATIONS, SPARKS,
   RINGS, CONSTELLATION_STARS, CONSTELLATION_LINES,
@@ -62,7 +63,17 @@ export default function RegisterPage() {
     e.preventDefault(); setError('');
     if (form.password.length < 6) { setError('Mật khẩu phải có ít nhất 6 ký tự'); return; }
     setLoading(true);
-    try { await register(form); navigate('/'); }
+    try {
+      const res = await register(form);
+      // If OTP required, redirect to OTP page
+      if (res?.data?.requiresVerification) {
+        const params = new URLSearchParams({ email: res.data.email || form.email });
+        if (res.data.devOtp) params.set('dev', res.data.devOtp);
+        navigate(`/verify-email?${params}`);
+      } else {
+        navigate('/');
+      }
+    }
     catch (err) { setError(err.response?.data?.message || 'Đăng ký thất bại'); }
     finally { setLoading(false); }
   };
@@ -310,3 +321,4 @@ export default function RegisterPage() {
     </>
   );
 }
+

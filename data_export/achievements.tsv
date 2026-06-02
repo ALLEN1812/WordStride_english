@@ -1,0 +1,21 @@
+﻿
+id	code	name	description	icon	category	exp_reward	rarity
+1	first_word	First Steps	H?c t? v?ng ??u ti�n	?	vocab	20	common
+2	words_10	Budding Scholar	H?c 10 t? v?ng	?	vocab	30	common
+3	words_100	Word Collector	H?c 100 t? v?ng	?	vocab	100	rare
+4	words_500	Lexicon Keeper	H?c 500 t? v?ng	??	vocab	300	epic
+5	words_1000	Archivist	H?c 1000 t? v?ng	??	vocab	700	legendary
+6	first_grammar	Grammar Initiate	Ho�n th�nh b�i ng? ph�p ??u ti�n	??	grammar	30	common
+7	grammar_perfect	Perfect Grammarian	??t 100% m?t b�i ng? ph�p	?	grammar	80	rare
+8	grammar_10	Scholar	Ho�n th�nh 10 b�i ng? ph�p	?	grammar	150	rare
+9	grammar_30	Grand Scholar	Ho�n th�nh 30 b�i ng? ph�p	?	grammar	400	epic
+10	first_toeic	Test Taker	Ho�n th�nh ?? thi ??u ti�n	?	toeic	50	common
+11	toeic_300	Bronze Candidate	??t 300+ ?i?m TOEIC	?	toeic	100	common
+12	toeic_500	Silver Candidate	??t 500+ ?i?m TOEIC	?	toeic	200	rare
+13	toeic_700	Gold Candidate	??t 700+ ?i?m TOEIC	?	toeic	400	epic
+14	toeic_900	Celestia Expert	??t 900+ ?i?m TOEIC	?	toeic	800	legendary
+15	streak_3	Warming Up	H?c 3 ng�y li�n t?c	?	streak	50	common
+16	streak_7	Week Warrior	H?c 7 ng�y li�n t?c	?	streak	150	rare
+17	streak_30	Monthly Champion	H?c 30 ng�y li�n t?c	?	streak	600	legendary
+
+

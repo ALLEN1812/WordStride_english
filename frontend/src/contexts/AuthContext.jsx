@@ -31,10 +31,19 @@ export const AuthProvider = ({ children }) => {
   const register = async (payload) => {
     const res = await api.post('/auth/register', payload);
     const { token, data } = res.data;
+    // If email verification required, don't log in yet
+    if (data?.requiresVerification) return res.data;
     localStorage.setItem('token', token);
     localStorage.setItem('user', JSON.stringify(data));
     setUser(data);
-    return data;
+    return res.data;
+  };
+
+  // Used after email verification to log in from token
+  const loginWithToken = (token, data) => {
+    localStorage.setItem('token', token);
+    localStorage.setItem('user', JSON.stringify(data));
+    setUser(data);
   };
 
   const logout = () => {
@@ -43,7 +52,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, loginWithToken, register, logout }}>
       {children}
     </AuthContext.Provider>
   );

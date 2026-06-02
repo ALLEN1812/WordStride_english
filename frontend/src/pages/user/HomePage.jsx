@@ -407,18 +407,18 @@ export default function HomePage() {
         .hp-card:hover .hp-card-element{opacity:1;}
 
         .hp-card-label {
-          font-family:'Cinzel',serif; font-size:.92rem; font-weight:700;
-          letter-spacing:.1em; margin-bottom:8px;
+          font-family:'Be Vietnam Pro',sans-serif; font-size:.95rem; font-weight:700;
+          letter-spacing:.04em; margin-bottom:8px;
           transition:color .3s;
         }
         .hp-card-desc {
-          font-size:.78rem; color:var(--text-sub); letter-spacing:.03em;
-          line-height:1.4; margin-bottom:12px;
+          font-size:.82rem; color:var(--text-sub); letter-spacing:.02em;
+          line-height:1.5; margin-bottom:12px;
         }
         .hp-card-stat {
           display:inline-flex; align-items:center; gap:5px;
-          font-family:'Cinzel',serif; font-size:.72rem; font-weight:600;
-          letter-spacing:.1em; color:var(--gold-dim);
+          font-family:'Be Vietnam Pro',sans-serif; font-size:.76rem; font-weight:600;
+          letter-spacing:.04em; color:var(--gold-dim);
           border-top:1px solid rgba(200,169,110,.1);
           padding-top:10px; width:100%;
           transition:color .3s;
@@ -461,8 +461,8 @@ export default function HomePage() {
           background:linear-gradient(90deg,transparent,rgba(200,169,110,.4),transparent);
         }
         .hp-panel-title {
-          font-family:'Cinzel',serif; font-size:.72rem; font-weight:600;
-          letter-spacing:.22em; text-transform:uppercase;
+          font-family:'Be Vietnam Pro',sans-serif; font-size:.78rem; font-weight:700;
+          letter-spacing:.1em; text-transform:uppercase;
           color:var(--gold-dim); margin-bottom:16px;
           display:flex; align-items:center; gap:8px;
         }
@@ -486,10 +486,10 @@ export default function HomePage() {
           font-size:16px;
         }
         .hp-quest-info{flex:1;min-width:0;}
-        .hp-quest-label{font-size:.82rem;font-weight:600;color:var(--text);margin-bottom:2px;}
+        .hp-quest-label{font-size:.84rem;font-weight:600;color:var(--text);margin-bottom:2px;}
         .hp-quest-reward{
-          font-family:'Cinzel',serif; font-size:.65rem;
-          letter-spacing:.1em; color:var(--gold-dim);
+          font-family:'Be Vietnam Pro',sans-serif; font-size:.72rem; font-weight:500;
+          letter-spacing:.04em; color:var(--gold-dim);
         }
         .hp-quest-check {
           width:22px; height:22px; border-radius:50%; flex-shrink:0;

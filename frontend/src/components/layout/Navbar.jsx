@@ -62,7 +62,9 @@ export default function Navbar() {
     localStorage.setItem('gi-theme', next ? 'dark' : 'light');
   };
 
-  if (location.pathname === '/register' || location.pathname === '/login') return null;
+  // Ẩn navbar trên trang thi TOEIC (fullscreen) — /toeic/123 nhưng không ẩn /toeic/result/123
+  const isTestPage = /^\/toeic\/(?!result\/)\d+/.test(location.pathname);
+  if (location.pathname === '/register' || location.pathname === '/login' || isTestPage) return null;
 
   const handleLogout = () => { logout(); navigate('/login'); };
 

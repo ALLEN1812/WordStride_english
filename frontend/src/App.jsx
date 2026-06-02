@@ -23,13 +23,15 @@ import GrammarSectionPage from './pages/user/GrammarSectionPage';
 import HistoryPage     from './pages/user/HistoryPage';
 import ToeicListPage   from './pages/user/ToeicListPage';
 import ToeicTestPage   from './pages/user/ToeicTestPage';
-import ToeicResultPage from './pages/user/ToeicResultPage';
+import ToeicResultPage    from './pages/user/ToeicResultPage';
+import VerifyEmailPage    from './pages/user/VerifyEmailPage';
 
 // Admin pages
 import AdminDashboard  from './pages/admin/AdminDashboard';
 import AdminVocabPage   from './pages/admin/AdminVocabPage';
 import AdminGrammarPage from './pages/admin/AdminGrammarPage';
 import AdminToeicPage   from './pages/admin/AdminToeicPage';
+import AdminUsersPage   from './pages/admin/AdminUsersPage';
 
 export default function App() {
   return (
@@ -38,8 +40,9 @@ export default function App() {
         <Navbar />
         <Routes>
           {/* Public */}
-          <Route path="/login"    element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login"         element={<LoginPage />} />
+          <Route path="/register"      element={<RegisterPage />} />
+          <Route path="/verify-email"  element={<VerifyEmailPage />} />
 
           {/* User (authenticated) */}
           <Route path="/" element={<PrivateRoute><HomePage /></PrivateRoute>} />
@@ -62,7 +65,7 @@ export default function App() {
 
           {/* Admin */}
           <Route path="/admin"         element={<AdminRoute><AdminDashboard /></AdminRoute>} />
-          <Route path="/admin/users"   element={<AdminRoute><AdminDashboard /></AdminRoute>} />
+          <Route path="/admin/users"   element={<AdminRoute><AdminUsersPage /></AdminRoute>} />
           <Route path="/admin/vocab"   element={<AdminRoute><AdminVocabPage /></AdminRoute>} />
           <Route path="/admin/grammar" element={<AdminRoute><AdminGrammarPage /></AdminRoute>} />
           <Route path="/admin/toeic"  element={<AdminRoute><AdminToeicPage /></AdminRoute>} />

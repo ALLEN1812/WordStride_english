@@ -212,24 +212,24 @@ export default function VocabListPage() {
         /* Category badge */
         .vl-card-cat{
           display:inline-flex;align-items:center;gap:4px;
-          padding:3px 9px;border-radius:12px;
-          font-family:'Be Vietnam Pro',sans-serif;font-size:.65rem;font-weight:600;
-          letter-spacing:.04em;border:1px solid;margin-bottom:8px;
+          padding:3px 10px;border-radius:12px;
+          font-family:'Be Vietnam Pro',sans-serif;font-size:.72rem;font-weight:600;
+          letter-spacing:.02em;border:1px solid;margin-bottom:8px;
           transition:box-shadow .3s;align-self:flex-start;
         }
         .vl-card:hover .vl-card-cat{box-shadow:0 0 10px var(--lb,rgba(200,169,110,.3));}
 
         /* Card title */
         .vl-card-title{
-          font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;
-          color:var(--gold-lt);letter-spacing:.02em;line-height:1.3;
+          font-family:'Be Vietnam Pro',sans-serif;font-size:1rem;font-weight:700;
+          color:var(--gold-lt);letter-spacing:.01em;line-height:1.35;
           margin-bottom:6px;transition:color .3s;
         }
         .vl-card:hover .vl-card-title{color:var(--gold-bright);}
 
         /* Card desc */
         .vl-card-desc{
-          font-size:.8rem;color:var(--text-sub);line-height:1.55;
+          font-size:.82rem;color:var(--text-sub);line-height:1.6;
           display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
           overflow:hidden;flex:1;
         }
@@ -241,8 +241,8 @@ export default function VocabListPage() {
           border-top:1px solid rgba(200,169,110,.07);
         }
         .vl-card-cta{
-          font-family:'Be Vietnam Pro',sans-serif;font-size:.62rem;font-weight:600;
-          letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dim);
+          font-family:'Be Vietnam Pro',sans-serif;font-size:.72rem;font-weight:600;
+          letter-spacing:.04em;text-transform:uppercase;color:var(--gold-dim);
           display:flex;align-items:center;gap:5px;
         }
         .vl-card-arrow{

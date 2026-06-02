@@ -1,0 +1,16 @@
+﻿
+id	name	description	category	thumbnail	created_by	created_at	updated_at	difficulty	status
+1	Giao ti?p h?ng ng?y	C?c t? v?ng th?ng d?ng trong giao ti?p h?ng ng?y	Giao ti?p	NULL	1	2026-05-03 20:09:53	2026-05-03 
+20:09:53	beginner	published
+2	TOEIC - V?n ph?ng	T? v?ng TOEIC ch? ?? v?n ph?ng v? c?ng vi?c	TOEIC	NULL	1	2026-05-03 20:09:53	2026-05-03 20:09:53	
+beginner	published
+3	TOEIC - Du l?ch	T? v?ng TOEIC ch? ?? du l?ch v? v?n chuy?n	TOEIC	NULL	1	2026-05-03 20:09:53	2026-05-03 20:09:53	
+beginner	published
+4	IELTS - M?i tr??ng	T? v?ng IELTS ch? ?? m?i tr??ng v? thi?n nhi?n	IELTS	NULL	1	2026-05-03 20:09:53	2026-05-03 
+20:09:53	beginner	published
+5	IELTS - C?ng ngh?	T? v?ng IELTS ch? ?? c?ng ngh? v? ??i m?i	IELTS	NULL	1	2026-05-03 20:09:53	2026-05-03 20:09:53	
+beginner	published
+6	H?c thu?t - Khoa h?c	T? v?ng h?c thu?t trong l?nh v?c khoa h?c	H?c thu?t	NULL	1	2026-05-03 20:09:53	2026-05-03 
+20:09:53	beginner	published
+
+
